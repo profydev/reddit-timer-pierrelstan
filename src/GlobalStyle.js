@@ -2,8 +2,8 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   body {
-    padding: 0;
-    background-color: black;
+    font-family: 'Bitter', serif;
+    font-family: 'Montserrat', sans-serif
   }
   `;
 export default GlobalStyle;
