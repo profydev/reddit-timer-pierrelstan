@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import IconLogoSvg from '../utils/IconLogoSvg';
 
 const Container = styled.header`
+  max-width: 1440px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 105px;
-  margin-left: 63px;
-  margin-right: 63px;
+  margin: 0 80px;
 
   @media (max-width: 768px) {
     margin-left: 10px;
@@ -17,7 +18,8 @@ const Container = styled.header`
 `;
 const NavListLink = styled(Link)`
   color: ${(props) => props.theme.color.text};
-  padding-left: 26px;
+  margin-left: 26px;
+  font-size: ${(props) => props.theme.font.size.default};
   text-decoration: none;
   color: ${(props) => props.theme.color.text};
 `;
@@ -34,9 +36,25 @@ const NavBar = styled.ul`
   }
 `;
 
+const WrapperLogo = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const LogoLink = styled(Link)`
+  margin: 0;
+  padding: 0;
+`;
+
 export default function Header() {
   return (
     <Container>
+      <WrapperLogo>
+        <LogoLink to="/">
+          <IconLogoSvg />
+        </LogoLink>
+      </WrapperLogo>
       <NavBar>
         <NavListItem>
           <NavListLink to="/search">Search</NavListLink>
