@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { Normalize } from 'styled-normalize';
-import Header from './components/Header';
-import NoMatch from './components/NoMatch';
+import Header from './components/Header/Header';
+import NoMatch from './components/NoMatch/NoMatch';
 import GlobalStyle from './utils/GlobalStyle';
 import theme from './utils/theme';
 
