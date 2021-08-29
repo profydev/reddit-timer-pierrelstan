@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Search() {
+export default function NoMatch() {
   return (
     <div>
-      <h1>search page</h1>
+      <h3>404 -Not Found</h3>
     </div>
   );
 }
