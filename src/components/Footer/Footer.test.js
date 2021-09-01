@@ -3,10 +3,11 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom/cjs/react-router-dom.min';
 import { ThemeProvider } from 'styled-components';
 import theme from '../../utils/theme';
+
 import Footer from './Footer';
 
 const setup = () => {
-  return render(
+  render(
     <ThemeProvider theme={theme}>
       <MemoryRouter>
         <Footer />
