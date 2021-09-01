@@ -50,5 +50,13 @@ const GlobalStyle = createGlobalStyle`
     line-height: ${(props) => props.theme.font.lineHeight.default};
     color: ${(props) => props.theme.color.text};
   }
+  .container {
+     display : flex;
+     flex-direction: column;
+     min-height:100vh;
+  }
+  .wrapper  {
+    flex:1
+  }
   `;
 export default GlobalStyle;
