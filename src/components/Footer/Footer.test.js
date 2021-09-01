@@ -1,11 +1,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom/cjs/react-router-dom.min';
-import userEvent from '@testing-library/user-event';
-
 import { ThemeProvider } from 'styled-components';
 import theme from '../../utils/theme';
-import App from '../../App';
 import Footer from './Footer';
 
 const setup = () => {
