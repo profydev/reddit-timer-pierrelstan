@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { ReactComponent } from './logo.svg';
+import { ReactComponent } from './sign.svg';
 
 export const Container = styled.footer`
   display: inline-grid;
