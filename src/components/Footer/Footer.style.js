@@ -17,7 +17,7 @@ export const ListItem = styled(Link)`
   font-size: ${(props) => props.theme.font.size.small};
   text-align: ${({ totheright }) => (totheright ? 'right ' : 'unset')};
   text-decoration: none;
-  padding-top: ${({ totheright }) => (totheright ? '7px' : '8px')}`;
+  padding-top: ${({ totheright }) => (totheright ? '15px' : '17px')}`;
 
 export const LogoLink = styled(Link)`
   padding: 0;
