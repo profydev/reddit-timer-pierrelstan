@@ -5,6 +5,8 @@ import { ReactComponent } from './sign.svg';
 export const Container = styled.footer`
   display:flex;
   width: 100%;
+  height: 100px;
+  align-items: center;
   max-width: 940px;
   margin: auto;
   padding: 0 20px;`;
