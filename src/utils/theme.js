@@ -1,6 +1,6 @@
 const theme = {
   color: {
-    text: '#93918f',
+    text: '#636363',
   },
   font: {
     family: {
@@ -9,6 +9,7 @@ const theme = {
     },
     size: {
       default: '16px',
+      small: '14px',
     },
     lineHeight: {
       default: 1.69,
