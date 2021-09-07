@@ -1,27 +1,22 @@
 import React from 'react';
-import {
-  Container,
-  Logo,
-  LogoLink,
-  ListItem,
-} from './Footer.style';
+import * as S from './Footer.style';
 
 export default function Footer() {
   const RIGHT = 'true';
   return (
-    <Container>
-      <ListItem
+    <S.Container>
+      <S.ListItem
         as="a"
         href="https://profy.dev/employers"
       >
         profy.dev
-      </ListItem>
-      <LogoLink to="/">
-        <Logo />
-      </LogoLink>
-      <ListItem to="/terms" totheright={RIGHT}>
+      </S.ListItem>
+      <S.LogoLink to="/">
+        <S.Logo />
+      </S.LogoLink>
+      <S.ListItem to="/terms" totheright={RIGHT}>
         Terms &amp; Privacy
-      </ListItem>
-    </Container>
+      </S.ListItem>
+    </S.Container>
   );
 }
