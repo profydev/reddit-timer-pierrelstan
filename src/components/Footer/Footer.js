@@ -7,6 +7,7 @@ import {
 } from './Footer.style';
 
 export default function Footer() {
+  const RIGHT = 'true';
   return (
     <Container>
       <ListItem
@@ -18,7 +19,7 @@ export default function Footer() {
       <LogoLink to="/">
         <Logo />
       </LogoLink>
-      <ListItem to="/terms" totheright>
+      <ListItem to="/terms" totheright={RIGHT}>
         Terms &amp; Privacy
       </ListItem>
     </Container>
