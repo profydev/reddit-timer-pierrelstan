@@ -29,7 +29,7 @@ describe(' Testing Header Navigation', () => {
     setup('/search/javascript');
     const logoLink = screen.getByRole('link', { name: /logo.svg/i });
     userEvent.click(logoLink);
-      expect(screen.getByText(/No reactions to your reddit posts/i)).toBeInTheDocument();
+    expect(screen.getByText(/No reactions to your reddit posts/i)).toBeInTheDocument();
   });
 
   test('navigates to search page when search link is clicked', () => {
