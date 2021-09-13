@@ -65,4 +65,9 @@ text-decoration: none`;
 export const Wrapper = styled.div`
 text-align:center;
 `;
+export const WrapperSubreddit = styled.div`
+margin-top: 48px`;
 
+export const WrapperTable = styled.div`
+display: flex;
+justify-content: center;`;
