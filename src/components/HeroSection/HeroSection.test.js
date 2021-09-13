@@ -18,4 +18,15 @@ describe('HeroSection', () => {
     ).toHaveAttribute('href', '/search/javascript');
   });
 
+  test('Should contains  a title and  a subtile ', () => {
+    setup();
+    const title = screen.getByText(/No reactions to your reddit posts/i);
+    const subTitle = screen.getByText(/Great timing, great results. Find the best time to post on your subreddit/i);
+    expect(
+      title.closest('h1'),
+    ).toBeInTheDocument();
+    expect(
+      subTitle.closest('h3'),
+    ).toBeInTheDocument();
+  });
 });
