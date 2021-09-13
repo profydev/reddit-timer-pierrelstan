@@ -29,4 +29,10 @@ describe('HeroSection', () => {
       subTitle.closest('h3'),
     ).toBeInTheDocument();
   });
+  test('navigates to Search page when table Image is clicked', () => {
+    setup();
+    const tableLink = screen.getByRole('link', { name: /table.svg/i });
+    userEvent.click(tableLink);
+    expect(screen.getByText(/search page/i)).toBeInTheDocument();
+  });
 });
