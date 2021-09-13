@@ -35,3 +35,34 @@ font-weight: normal;
 font-size: ${({ theme }) => theme.font.size.default};
 line-height: 20px;
 margin-top:21px`;
+
+export const Button = styled(Link)`
+background-color:#FDB755;
+color:${({ theme }) => theme.color.light};
+border-radius: 4px;
+text-transform: uppercase;
+padding: 9px 15px;
+text-decoration: none;
+font-family: ${({ theme }) => theme.font.family.default};
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 9px;`;
+
+export const WrapperButton = styled.div`
+margin-top: 48px `;
+
+export const LinkSubreddit = styled(Link)`
+margin-top: 48px;
+font-family:${({ theme }) => theme.font.family.default};
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 20px;
+color:#93918F;
+text-decoration: none`;
+
+export const Wrapper = styled.div`
+text-align:center;
+`;
+
