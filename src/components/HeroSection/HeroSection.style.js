@@ -4,12 +4,13 @@ import { ReactComponent } from './table.svg';
 
 export const Container = styled.div`
 display: flex;
-justify-content: center;
 flex-direction: column;
-align-items: center;
+justify-content: center;
 width: 100%;
-padding-top: 100px ;
+padding-top: 127px ;
 `;
 
 export const TableImage = styled(ReactComponent)`
 `;
+
+
