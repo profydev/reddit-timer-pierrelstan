@@ -1,6 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 /** Montserrat Regular **/
 @font-face {
     font-family: "Montserrat";
@@ -56,7 +59,7 @@ const GlobalStyle = createGlobalStyle`
      min-height:100vh;
   }
   .wrapper  {
-    flex:1
+    flex: 1;
   }
   `;
 export default GlobalStyle;
