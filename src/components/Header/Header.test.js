@@ -29,7 +29,7 @@ describe(' Testing Header Navigation', () => {
     setup('/search/javascript');
     const logoLink = screen.getByRole('link', { name: /logo.svg/i });
     userEvent.click(logoLink);
-    expect(screen.getByText(/home page/i)).toBeInTheDocument();
+      expect(screen.getByText(/No reactions to your reddit posts/i)).toBeInTheDocument();
   });
 
   test('navigates to search page when search link is clicked', () => {
@@ -53,7 +53,7 @@ describe(' Testing Header Navigation', () => {
       Testhistory.push(hash);
       const hashlink = screen.getByRole('link', { name: link });
       userEvent.click(hashlink);
-      expect(screen.getByText(/home page/i)).toBeInTheDocument();
+      expect(screen.getByText(/No reactions to your reddit posts/i)).toBeInTheDocument();
       expect(Testhistory.location.hash).toEqual(hash);
     },
   );
