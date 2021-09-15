@@ -18,6 +18,11 @@ export default function HeroSection() {
         <S.WrapperSubreddit>
           <S.LinkSubreddit to="/search/javascript">r/javascript</S.LinkSubreddit>
         </S.WrapperSubreddit>
+        <S.WrapperTable>
+          <S.TableImageLink to="/search/javascript">
+            <S.Image />
+          </S.TableImageLink>
+        </S.WrapperTable>
       </S.Wrapper>
     </S.Container>
   );
