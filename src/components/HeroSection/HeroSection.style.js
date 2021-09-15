@@ -65,4 +65,9 @@ line-height: 20px;
 color:#93918F;
 text-decoration: none`;
 
+export const WrapperSubreddit = styled.div`
+margin-top: 48px`;
 
+export const WrapperTable = styled.div`
+display: flex;
+justify-content: center;`;
