@@ -23,7 +23,7 @@ justify-content:center;
 
 export const Title = styled.h1`
 font-family:${({ theme }) => theme.font.family.headline};
-color:${({ theme }) => theme.color.dark}
+color:${({ theme }) => theme.color.dark};
 font-weight: normal;
 font-size: 38px;
 line-height: 46px;
@@ -32,10 +32,10 @@ padding:0;`;
 
 export const SubTitle = styled.h3`
 font-family: ${({ theme }) => theme.font.family.default};
-font-style: normal;
 font-weight: normal;
 font-size: ${({ theme }) => theme.font.size.default};
 line-height: 20px;
+color: #93918F;
 margin-top:21px`;
 
 export const Button = styled(Link)`
@@ -47,7 +47,7 @@ padding: 9px 15px;
 text-decoration: none;
 font-family: ${({ theme }) => theme.font.family.default};
 font-style: normal;
-font-weight: 500;
+font-weight: 400;
 font-size: 14px;
 line-height: 9px;`;
 
