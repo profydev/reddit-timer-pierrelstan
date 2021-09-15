@@ -27,3 +27,10 @@ cypress/screenshots
 cypress/videos
 
 .eslintcache
+
+
+#vscode
+.vscode
+
+#history
+.history
