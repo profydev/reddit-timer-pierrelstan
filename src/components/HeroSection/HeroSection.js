@@ -15,6 +15,9 @@ export default function HeroSection() {
             Show me the best time
           </S.Button>
         </S.WrapperButton>
+        <S.WrapperSubreddit>
+          <S.LinkSubreddit to="/search/javascript">r/javascript</S.LinkSubreddit>
+        </S.WrapperSubreddit>
       </S.Wrapper>
     </S.Container>
   );
