@@ -10,6 +10,11 @@ export default function HeroSection() {
           Great timing, great results! Find the best time to post on
           your subreddit.
         </S.SubTitle>
+        <S.WrapperButton>
+          <S.Button to="/search/javascript">
+            Show me the best time
+          </S.Button>
+        </S.WrapperButton>
       </S.Wrapper>
     </S.Container>
   );
