@@ -38,7 +38,6 @@ font-size: ${({ theme }) => theme.font.size.default};
 line-height: 20px;
 margin-top:21px`;
 
-
 export const Button = styled(Link)`
 background-color:#FDB755;
 color:${({ theme }) => theme.color.light};
