@@ -49,7 +49,7 @@ describe('Testing Footer links', () => {
     setupSvg();
     const logoLink = screen.getByRole('link', { name: /sign.svg/i });
     userEvent.click(logoLink);
-    expect(screen.getByText(/home page/i)).toBeInTheDocument();
+    expect(screen.getByText(/no reactions to your reddit posts/i)).toBeInTheDocument();
   });
 
   test('link terms & privacy should point to /terms ', () => {
