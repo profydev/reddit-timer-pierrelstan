@@ -20,3 +20,20 @@ padding-top: 30px;
 display:flex;
 justify-content:center;
 `;
+
+export const Title = styled.h1`
+font-family:${({ theme }) => theme.font.family.headline};
+color:${({ theme }) => theme.color.dark}
+font-weight: normal;
+font-size: 38px;
+line-height: 46px;
+margin:0;
+padding:0;`;
+
+export const SubTitle = styled.h3`
+font-family: ${({ theme }) => theme.font.family.default};
+font-style: normal;
+font-weight: normal;
+font-size: ${({ theme }) => theme.font.size.default};
+line-height: 20px;
+margin-top:21px`;
