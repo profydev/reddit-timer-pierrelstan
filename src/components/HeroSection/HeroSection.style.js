@@ -32,7 +32,6 @@ padding:0;`;
 
 export const SubTitle = styled.h3`
 font-family: ${({ theme }) => theme.font.family.default};
-font-weight: normal;
 font-size: ${({ theme }) => theme.font.size.default};
 line-height: 20px;
 color: #93918F;
@@ -54,14 +53,14 @@ line-height: 9px;`;
 export const WrapperButton = styled.div`
 margin-top: 48px `;
 
-export const LinkSubreddit = styled(Link)`
+export const TextSubreddit = styled.p`
 margin-top: 48px;
 font-family:${({ theme }) => theme.font.family.default};
 font-style: normal;
 font-weight: 500;
 font-size: 16px;
-line-height: 20px;
 color:#93918F;
+margin-bottom: 0;
 text-decoration: none`;
 
 export const WrapperSubreddit = styled.div`
