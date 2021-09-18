@@ -30,6 +30,40 @@ font-size:${({ theme }) => theme.font.size.large};
 line-height:1.2;
 margin-bottom: 10px`;
 
+export const List = styled.ul`
+font-family:${({ theme }) => theme.font.family.default};
+font-style: normal;
+font-weight: normal;
+font-size: ${({ theme }) => theme.font.size.default};
+color:${({ theme }) => theme.color.text};
+margin: 0;
+padding: 0;
+position: relative;
+top: 2px;
+left: -1px;
+`;
+
 export const LinkProfy = styled(Link)`
 color:#3c88d5;
 text-decoration: none;`;
+
+export const ListItem = styled.li`
+list-style: none;
+&:before {
+  content: " . ";
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  position: relative;
+}
+`;
+
+export const Text = styled.p`
+font-family: ${({ theme }) => theme.font.family.default};
+font-style: normal;
+font-weight: normal;
+font-size: ${({ theme }) => theme.font.size.default};
+margin-top: 3px;
+text-align: inherit;
+float:left;
+}`;
