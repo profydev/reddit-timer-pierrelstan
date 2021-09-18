@@ -7,20 +7,20 @@ export default function InfoSection() {
     'See immediately when to submit your reddit post.'];
   return (
     <S.Container>
-      <div>
-        <div id="how-it-works">
-          <h1>How it works</h1>
-          <ul>
+      <S.Wrapper>
+        <S.WrapperHowItWorks id="how-it-works">
+          <S.Title>How it works</S.Title>
+          <S.List>
             {
             DATA.map((list) => (
-              <li key={list}>{list}</li>
+              <S.ListItem key={list}>{list}</S.ListItem>
             ))
           }
-          </ul>
-        </div>
-        <div id="about">
-          <h1>About</h1>
-          <p>
+          </S.List>
+        </S.WrapperHowItWorks>
+        <S.WrapperAbout id="about">
+          <S.Title>About</S.Title>
+          <S.Text>
             This app was created during a course on
             <S.LinkProfy as="a" href="https://profy.dev"> profy.dev </S.LinkProfy>
             with the goal to implement a
@@ -34,9 +34,9 @@ export default function InfoSection() {
               information
             </S.LinkProfy>
             .
-          </p>
-        </div>
-      </div>
+          </S.Text>
+        </S.WrapperAbout>
+      </S.Wrapper>
     </S.Container>
   );
 }
