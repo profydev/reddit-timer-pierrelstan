@@ -14,6 +14,7 @@ const theme = {
     size: {
       default: '16px',
       small: '14px',
+      large: '24px',
     },
     lineHeight: {
       default: 1.69,
