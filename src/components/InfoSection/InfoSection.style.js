@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const Container = styled.section`
+export const Container = styled.div`
 width: 100%;
 max-width: 770px;
 height: 457px;
