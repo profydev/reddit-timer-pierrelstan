@@ -15,9 +15,9 @@ margin-left: 16px;
 display: flex;
 flex-direction: column;`;
 
-export const WrapperHowItWorks = styled.div`
+export const WrapperHowItWorks = styled.section`
 `;
-export const WrapperAbout = styled.div`
+export const WrapperAbout = styled.section`
 margin-top: 92px;
 margin-bottom: 40px;`;
 
