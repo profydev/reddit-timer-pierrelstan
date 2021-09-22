@@ -16,7 +16,7 @@ function SubredditForm({
   };
   return (
     <S.Container>
-      <h1>Find the best time for a subreddit</h1>
+      <S.Title>Find the best time for a subreddit</S.Title>
       <form onSubmit={handleSubmit}>
         <label htmlFor="search">
           r /
