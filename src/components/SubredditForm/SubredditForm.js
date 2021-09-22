@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import * as S from './SubredditForm.style';
 
 function SubredditForm({
   state,
@@ -14,7 +15,7 @@ function SubredditForm({
     handleSubmitState(e);
   };
   return (
-    <div>
+    <S.Container>
       <h1>Find the best time for a subreddit</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="search">
@@ -23,7 +24,7 @@ function SubredditForm({
         </label>
         <button type="submit">Search</button>
       </form>
-    </div>
+    </S.Container>
   );
 }
 SubredditForm.defaultProps = {
