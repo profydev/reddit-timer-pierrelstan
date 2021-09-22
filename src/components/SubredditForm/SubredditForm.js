@@ -17,13 +17,13 @@ function SubredditForm({
   return (
     <S.Container>
       <S.Title>Find the best time for a subreddit</S.Title>
-      <form onSubmit={handleSubmit}>
+      <S.Form onSubmit={handleSubmit}>
         <label htmlFor="search">
           r /
           <input defaultValue={state} onChange={handleChange} />
         </label>
         <button type="submit">Search</button>
-      </form>
+      </S.Form>
     </S.Container>
   );
 }
