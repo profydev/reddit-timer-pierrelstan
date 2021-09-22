@@ -18,4 +18,13 @@ line-height: 36px;
 export const WrapperForm = styled.div`
 `;
 
+export const Form = styled.form`
+display: flex;`;
 
+export const Title = styled.h1`
+font-family: ${({ theme }) => theme.font.family.headline};
+font-size: ${({ theme }) => theme.font.size.extraLarge};
+color: ${({ theme }) => theme.color.dark};
+margin-top: 27px;
+margin-bottom: 22px;
+font-weight: 400`;
