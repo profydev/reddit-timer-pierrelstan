@@ -1,9 +1,10 @@
 import React from 'react';
+import SubredditForm from '../components/SubredditForm/SubredditForm';
 
 export default function Search() {
   return (
     <div>
-      <h1>search page</h1>
+      <SubredditForm />
     </div>
   );
 }
