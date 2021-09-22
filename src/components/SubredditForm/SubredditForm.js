@@ -22,8 +22,7 @@ function SubredditForm({
           r /
         </S.Label>
         <S.Input defaultValue={state} onChange={handleChange} />
-
-        <button type="submit">Search</button>
+        <S.Button type="submit">Search</S.Button>
       </S.Form>
     </S.Container>
   );
