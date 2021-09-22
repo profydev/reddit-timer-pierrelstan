@@ -33,6 +33,6 @@ describe('HeroSection', () => {
     setup();
     const tableLink = screen.getByRole('link', { name: /table.svg/i });
     userEvent.click(tableLink);
-    expect(screen.getByText(/search page/i)).toBeInTheDocument();
+    expect(screen.getByText(/find the best time for a subreddit/i)).toBeInTheDocument();
   });
 });
