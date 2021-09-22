@@ -21,7 +21,7 @@ function SubredditForm({
         <S.Label htmlFor="search">
           r /
         </S.Label>
-        <input defaultValue={state} onChange={handleChange} />
+        <S.Input defaultValue={state} onChange={handleChange} />
 
         <button type="submit">Search</button>
       </S.Form>
