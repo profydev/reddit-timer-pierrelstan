@@ -18,10 +18,11 @@ function SubredditForm({
     <S.Container>
       <S.Title>Find the best time for a subreddit</S.Title>
       <S.Form onSubmit={handleSubmit}>
-        <label htmlFor="search">
+        <S.Label htmlFor="search">
           r /
-          <input defaultValue={state} onChange={handleChange} />
-        </label>
+        </S.Label>
+        <input defaultValue={state} onChange={handleChange} />
+
         <button type="submit">Search</button>
       </S.Form>
     </S.Container>
