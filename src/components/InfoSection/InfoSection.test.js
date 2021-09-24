@@ -1,8 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { MemoryRouter, Route } from 'react-router-dom/cjs/react-router-dom.min';
+import { MemoryRouter } from 'react-router-dom/cjs/react-router-dom.min';
 import { ThemeProvider } from 'styled-components';
-import userEvent from '@testing-library/user-event';
 import theme from '../../utils/theme';
 import InfoSection from './InfoSection';
 
@@ -10,12 +9,11 @@ const setup = () => {
   render(
     <ThemeProvider theme={theme}>
       <MemoryRouter>
-      <InfoSection />
+        <InfoSection />
       </MemoryRouter>
     </ThemeProvider>,
   );
 };
-
 
 describe('InfoSection', () => {
   test('link profy.dev should have url "profy.dev" ', () => {
