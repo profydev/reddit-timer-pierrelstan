@@ -1,6 +1,8 @@
 const scrollToLocation = (location) => {
   if (location.hash === '') {
-    window.scrollTo(0, 0);
+    window.scrollTo = (x, y) => {
+      document.documentElement.scrollTop = y;
+    };
   } else {
     setTimeout(() => {
       const id = location.hash.replace('#', '');
