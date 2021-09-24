@@ -3,14 +3,13 @@ import PropTypes from 'prop-types';
 import * as S from './SubredditForm.style';
 
 function SubredditForm({
-  onSearch,
+  search,
   handleChangeState,
   handleSubmitState,
 }) {
   const handleChange = (e) => {
     handleChangeState(e);
   };
-
   const handleSubmit = (e) => {
     handleSubmitState(e);
   };
@@ -20,22 +19,17 @@ function SubredditForm({
       <S.Form onSubmit={handleSubmit}>
         <S.Label>
           r /
-          <S.Input name="search" type="text" defaultValue={onSearch} onChange={handleChange} />
+          <S.Input name="search" type="text" value={search} onChange={handleChange} />
         </S.Label>
         <S.Button type="submit">Search</S.Button>
       </S.Form>
     </S.Container>
   );
 }
-SubredditForm.defaultProps = {
-  onSearch: '',
-  handleChangeState: () => '',
-  handleSubmitState: () => '',
-};
 
 SubredditForm.propTypes = {
-  onSearch: PropTypes.string,
-  handleChangeState: PropTypes.func,
-  handleSubmitState: PropTypes.func,
+  search: PropTypes.string.isRequired,
+  handleChangeState: PropTypes.func.isRequired,
+  handleSubmitState: PropTypes.func.isRequired,
 };
 export default SubredditForm;
