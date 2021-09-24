@@ -12,7 +12,7 @@ export const Label = styled.label`
 color: ${({ theme }) => theme.color.midLight};
 font-size: ${({ theme }) => theme.font.size.medium};
 margin-right: 10px;
-line-height: 36px;
+line-height: 19px;
 `;
 
 export const WrapperForm = styled.div`
@@ -37,9 +37,8 @@ font-size: ${({ theme }) => theme.font.size.small};
 border-radius: 2px;
 border: 1px solid ${({ theme }) => theme.color.midLight};
 background-color: ${({ theme }) => theme.color.light};
-margin-right: 10px;
 margin-bottom: 0;
-margin-left:0;
+margin-left:10px;
 margin-top: 0;
 line-height: 1.15;
 `;
