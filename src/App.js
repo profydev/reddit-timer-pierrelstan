@@ -24,10 +24,10 @@ function App() {
           <div className="wrapper">
             <Header />
             <Switch>
-              <Route exact path="/search/javascript">
+              <Route path="/search/:search">
                 <Search />
               </Route>
-              <Route path="/">
+              <Route exact path="/">
                 <Home />
               </Route>
               <Route exact path="*">
