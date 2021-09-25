@@ -31,7 +31,7 @@ font-weight: 400`;
 
 export const Input = styled.input`
 width: 336px;
-height: 34px;
+height: 32px;
 padding: 0px 17px;
 font-size: ${({ theme }) => theme.font.size.small};
 border-radius: 2px;
