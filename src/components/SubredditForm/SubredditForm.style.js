@@ -44,7 +44,7 @@ line-height: 1.15;
 `;
 
 export const Button = styled.button`
-padding: 14px 16px;
+padding: 13px 16px;
 border-radius: 4px;
 font-size: ${({ theme }) => theme.font.size.small};
 font-weight: 500;
