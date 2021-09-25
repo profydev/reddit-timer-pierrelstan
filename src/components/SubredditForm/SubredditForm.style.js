@@ -11,7 +11,7 @@ margin-top: 90px;
 export const Label = styled.label`
 color: ${({ theme }) => theme.color.midLight};
 font-size: ${({ theme }) => theme.font.size.medium};
-margin-right: 10px;
+margin-right: 9px;
 line-height: 19px;
 `;
 
