@@ -1,4 +1,5 @@
 import React from 'react';
+import defaultSubreddit from '../../utils/defaultSubreddit';
 import * as S from './HeroSection.style';
 
 export default function HeroSection() {
@@ -11,7 +12,7 @@ export default function HeroSection() {
           your subreddit.
         </S.SubTitle>
         <S.WrapperButton>
-          <S.Button to="/search/javascript">
+          <S.Button to={`/search/${defaultSubreddit}`}>
             Show me the best time
           </S.Button>
         </S.WrapperButton>
@@ -19,7 +20,7 @@ export default function HeroSection() {
           <S.TextSubreddit>r/javascript</S.TextSubreddit>
         </S.WrapperSubreddit>
         <S.WrapperTable>
-          <S.TableImageLink to="/search/javascript">
+          <S.TableImageLink to={`/search/${defaultSubreddit}`}>
             <S.Image />
           </S.TableImageLink>
         </S.WrapperTable>
