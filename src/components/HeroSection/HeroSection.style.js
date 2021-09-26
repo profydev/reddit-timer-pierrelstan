@@ -22,10 +22,7 @@ justify-content:center;
 `;
 
 export const Title = styled.h1`
-font-family:${({ theme }) => theme.font.family.headline};
-color:${({ theme }) => theme.color.dark};
-font-weight: 400;
-font-size: 38px;
+font-size: ${({ theme }) => theme.font.size};
 line-height: 46px;
 margin:0;
 padding:0;`;
