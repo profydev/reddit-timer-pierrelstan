@@ -17,7 +17,10 @@ export default function HeroSection() {
           </S.Button>
         </S.WrapperButton>
         <S.WrapperSubreddit>
-          <S.TextSubreddit>r/javascript</S.TextSubreddit>
+          <S.TextSubreddit>
+            r/
+            {defaultSubreddit}
+          </S.TextSubreddit>
         </S.WrapperSubreddit>
         <S.WrapperTable>
           <S.TableImageLink to={`/search/${defaultSubreddit}`}>
