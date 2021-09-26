@@ -27,7 +27,7 @@ line-height: 46px;
 margin:0;
 padding:0;`;
 
-export const SubTitle = styled.h3`
+export const SubTitle = styled.h2`
 font-family: ${({ theme }) => theme.font.family.default};
 font-size: ${({ theme }) => theme.font.size.default};
 line-height: 20px;
@@ -45,7 +45,7 @@ text-decoration: none;
 font-family: ${({ theme }) => theme.font.family.default};
 font-style: normal;
 font-weight: 400;
-font-size: 14px;
+font-size:  ${({ theme }) => theme.font.size.small};
 line-height: 9px;`;
 
 export const WrapperButton = styled.div`
@@ -56,7 +56,7 @@ margin-top: 48px;
 font-family:${({ theme }) => theme.font.family.default};
 font-style: normal;
 font-weight: 200;
-font-size: 16px;
+font-size:${({ theme }) => theme.font.size.default};
 margin-bottom: 0;
 color: ${({ theme }) => theme.color.midLight};
 text-decoration: none`;
