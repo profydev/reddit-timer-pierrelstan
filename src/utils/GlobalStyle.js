@@ -50,6 +50,17 @@ const GlobalStyle = createGlobalStyle`
     line-height: ${(props) => props.theme.font.lineHeight.default};
     color: ${(props) => props.theme.color.text};
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: ${(props) => props.theme.color.dark};
+    font-family: ${(props) => props.theme.font.family.headline};
+    font-weight: normal;
+    letter-spacing: ${(props) => props.theme.font.letterSpacing.heading};
+  }
+  h1 {
+    font-size: ${(props) => props.theme.font.size.large};
+  }
+
   .container {
      display : flex;
      flex-direction: column;
