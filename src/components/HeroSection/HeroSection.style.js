@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { ReactComponent } from './table.svg';
 
 export const Container = styled.div`
 display: flex;
@@ -12,7 +11,8 @@ padding-top: 127px ;`;
 export const Wrapper = styled.div`
 text-align:center;`;
 
-export const Image = styled(ReactComponent)`
+export const Image = styled.img`
+max-width:100%;
 `;
 
 export const TableImageLink = styled(Link)`
