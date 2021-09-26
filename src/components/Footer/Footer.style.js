@@ -8,8 +8,7 @@ export const Container = styled.footer`
   height: 100px;
   align-items: center;
   max-width: 940px;
-  margin: auto;
-  padding: 0 20px;`;
+  margin: auto;`;
 
 export const ListItem = styled(Link)`
   flex:1;
