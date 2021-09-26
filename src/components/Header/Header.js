@@ -1,4 +1,5 @@
 import React from 'react';
+import defaultSubreddit from '../../utils/defaultSubreddit';
 import {
   ContainerHeader,
   Wrapper,
@@ -21,7 +22,7 @@ export default function Header() {
         </WrapperLogo>
         <NavBar>
           <NavListItem>
-            <NavListLink to="/search/javascript">Search</NavListLink>
+            <NavListLink to={`/search/${defaultSubreddit}`}>Search</NavListLink>
           </NavListItem>
           <NavListItem>
             <NavListLink to="/#how-it-works">How it works</NavListLink>

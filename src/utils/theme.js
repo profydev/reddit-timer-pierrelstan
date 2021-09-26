@@ -14,10 +14,14 @@ const theme = {
     size: {
       default: '16px',
       small: '14px',
-      large: '24px',
+      large: '38px',
     },
     lineHeight: {
       default: 1.69,
+    },
+    letterSpacing: {
+      default: '0.3px',
+      heading: 'normal',
     },
   },
 };
