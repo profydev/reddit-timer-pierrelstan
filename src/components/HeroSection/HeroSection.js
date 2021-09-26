@@ -21,7 +21,11 @@ export default function HeroSection() {
         </S.WrapperSubreddit>
         <S.WrapperTable>
           <S.TableImageLink to={`/search/${defaultSubreddit}`}>
-            <S.Image />
+            <S.Image
+              src="/images/heatmap@2x.png"
+              srcSet="/images/heatmap.png, /images/heatmap@2x.png 2x, /images/heatmap@3x.png 3x"
+              alt="Screenshot of heatmap"
+            />
           </S.TableImageLink>
         </S.WrapperTable>
       </S.Wrapper>
