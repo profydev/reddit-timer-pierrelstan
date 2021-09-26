@@ -19,7 +19,10 @@ const theme = {
     lineHeight: {
       default: 1.69,
     },
-
+    letterSpacing: {
+      default: '0.3px',
+      heading: 'normal',
+    },
   },
 };
 export default theme;
