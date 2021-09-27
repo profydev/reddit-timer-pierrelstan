@@ -27,6 +27,7 @@ export default function InfoSection() {
             {' '}
             <br />
             pixel-perfect real-world application with professional workflows and tools like Kanban,
+            <br />
             ClickUp, Figma, GitHub, pull requests and code reviews.
             <S.LinkProfy as="a" href="https://profy.dev/employers">
               {' '}
