@@ -25,14 +25,14 @@ describe('Testing Footer links', () => {
   });
 
   test('navigates to home page when logo is clicked', () => {
-    const { footer } = setup();
+    const { footer } = setup('/search/javascript');
     const logoLink = within(footer).getByRole('link', { name: /sign.svg/i });
     userEvent.click(logoLink);
     expect(screen.getByText(/no reactions to your reddit posts/i)).toBeInTheDocument();
   });
 
   test('link terms & privacy should point to /terms', () => {
-    const { footer } = setup();
+    const { footer } = setup('/search/javascript');
 
     const termsLink = within(footer).getByRole('link', { name: /terms & privacy/i });
     userEvent.click(termsLink);
