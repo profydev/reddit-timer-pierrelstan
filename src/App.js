@@ -11,6 +11,7 @@ import Header from './components/Header/Header';
 import NoMatch from './components/NoMatch/NoMatch';
 import Home from './pages/Home';
 import Search from './pages/Search';
+import Terms from './pages/Terms';
 import GlobalStyle from './utils/GlobalStyle';
 import theme from './utils/theme';
 
@@ -26,6 +27,9 @@ function App() {
             <Switch>
               <Route path="/search/:search">
                 <Search />
+              </Route>
+              <Route path="/terms">
+                <Terms />
               </Route>
               <Route exact path="/">
                 <Home />
