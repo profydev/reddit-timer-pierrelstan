@@ -25,7 +25,7 @@ function App() {
           <div className="wrapper">
             <Header />
             <Switch>
-              <Route path="/search/:search">
+              <Route path="/search/:subreddit">
                 <Search />
               </Route>
               <Route path="/terms">
