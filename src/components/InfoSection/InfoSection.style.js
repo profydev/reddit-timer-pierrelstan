@@ -27,7 +27,7 @@ margin-top: 92px;
 margin-bottom: 40px;`;
 
 export const Title = styled.h1`
-font-size:${({ theme }) => theme.font.size.medium};
+font-size:${({ theme }) => theme.font.size.large};
 line-height:1.2;
 margin-bottom: 9px`;
 
