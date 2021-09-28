@@ -1,31 +1,35 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom/cjs/react-router-dom.min';
-import { ThemeProvider } from 'styled-components';
-import theme from '../../utils/theme';
-import InfoSection from './InfoSection';
+import { render, screen, within } from '@testing-library/react';
+import { MemoryRouter, Route } from 'react-router-dom/cjs/react-router-dom.min';
+import App from '../../App';
 
-const setup = () => {
+const setup = (initialPath = '/') => {
+  let history;
   render(
-    <ThemeProvider theme={theme}>
-      <MemoryRouter>
-        <InfoSection />
-      </MemoryRouter>
-    </ThemeProvider>,
+    <MemoryRouter initialEntries={[initialPath]}>
+      <App />
+      <Route
+        path="*"
+        render={(props) => {
+          history = props.history;
+          return null;
+        }}
+      />
+    </MemoryRouter>,
   );
+  return { history };
 };
 
 describe('InfoSection', () => {
-  test('link profy.dev should have url "profy.dev" ', () => {
+  test('links points to home and employers page ', () => {
     setup();
-    expect(
-      screen.getByText(/profy.dev/i).closest('a'),
-    ).toHaveAttribute('href', 'https://profy.dev');
-  });
-  test('Click here for more information should have url profy.dev/employers ', () => {
-    setup();
-    expect(
-      screen.getByText(/click here for more information/i).closest('a'),
-    ).toHaveAttribute('href', 'https://profy.dev/employers');
+
+    const aboutSection = screen.getAllByRole('article')[1];
+
+    const profyLink = within(aboutSection).getByRole('link', { name: /profy\.dev/i });
+    expect(profyLink.getAttribute('href')).toEqual('https://profy.dev');
+
+    const moreInfoLink = within(aboutSection).getByRole('link', { name: /click here for more information/i });
+    expect(moreInfoLink.getAttribute('href')).toEqual('https://profy.dev/employers');
   });
 });

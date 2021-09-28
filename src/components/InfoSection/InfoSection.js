@@ -2,9 +2,9 @@ import React from 'react';
 import * as S from './InfoSection.style';
 
 export default function InfoSection() {
-  const DATA = ['We find the 500 top posts from the past year for a subreddit.',
-    'The data is visualized in a heatmap grouped by weekday and hour of the day.',
-    'See immediately when to submit your reddit post.'];
+  const DATA = ['• We find the 500 top posts from the past year for a subreddit.',
+    '• The data is visualized in a heatmap grouped by weekday and hour of the day.',
+    '• See immediately when to submit your reddit post.'];
   return (
     <S.Container>
       <S.Wrapper>
@@ -27,6 +27,7 @@ export default function InfoSection() {
             {' '}
             <br />
             pixel-perfect real-world application with professional workflows and tools like Kanban,
+            <br />
             ClickUp, Figma, GitHub, pull requests and code reviews.
             <S.LinkProfy as="a" href="https://profy.dev/employers">
               {' '}
