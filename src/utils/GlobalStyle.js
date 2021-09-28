@@ -58,7 +58,7 @@ const GlobalStyle = createGlobalStyle`
     letter-spacing: ${(props) => props.theme.font.letterSpacing.heading};
   }
   h1 {
-    font-size: ${(props) => props.theme.font.size.large};
+    font-size: ${(props) => props.theme.font.size.extraLarge};
   }
 
   .container {
