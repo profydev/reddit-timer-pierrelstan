@@ -25,10 +25,10 @@ export default function Header() {
             <NavListLink to={`/search/${defaultSubreddit}`}>Search</NavListLink>
           </NavListItem>
           <NavListItem>
-            <NavListLink to="/#how-it-works">How it works</NavListLink>
+            <NavListLink smooth to="/#how-it-works">How it works</NavListLink>
           </NavListItem>
           <NavListItem>
-            <NavListLink to="/#about">About</NavListLink>
+            <NavListLink smooth to="/#about">About</NavListLink>
           </NavListItem>
         </NavBar>
       </Wrapper>
