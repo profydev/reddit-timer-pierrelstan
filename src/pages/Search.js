@@ -5,13 +5,13 @@ import SubredditForm from '../components/SubredditForm/SubredditForm';
 export default function Search() {
   const history = useHistory();
 
-  const id = useParams();
+  const { subreddit } = useParams();
 
   const [search, setSearch] = useState('');
 
   useEffect(() => {
-    setSearch(id.search);
-  }, [id]);
+    setSearch(subreddit);
+  }, [subreddit]);
 
   const handleChangeState = (e) => {
     setSearch(e.target.value);
