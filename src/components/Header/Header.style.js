@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom';
 import { ReactComponent } from './logo.svg';
 
 export const ContainerHeader = styled.header`
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 100;
   background-color: #fff;
 `;
 
