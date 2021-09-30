@@ -6,6 +6,7 @@ const theme = {
     midLight: '#93918F',
     light: '#ffffff',
     blue: '#3c88d5',
+    apricotYellow: '#FDB755',
   },
   font: {
     family: {
