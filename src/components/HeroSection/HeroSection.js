@@ -1,15 +1,9 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 import defaultSubreddit from '../../utils/defaultSubreddit';
 import * as S from './HeroSection.style';
 import Button from '../../common/button/index';
 
 export default function HeroSection() {
-  const history = useHistory();
-
-  const handleClick = () => {
-    history.push(`/search/${defaultSubreddit}`);
-  };
   return (
     <S.Container>
       <S.Wrapper>
@@ -18,11 +12,13 @@ export default function HeroSection() {
           Great timing, great results! Find the best time to post on
           your subreddit.
         </S.SubTitle>
-        <S.WrapperButton>
-          <Button onClick={handleClick}>
-            Show me the best time
-          </Button>
-        </S.WrapperButton>
+        <S.ContainerButton>
+          <S.WrapperButton to={`/search/${defaultSubreddit}`}>
+            <Button>
+              Show me the best time
+            </Button>
+          </S.WrapperButton>
+        </S.ContainerButton>
         <S.WrapperSubreddit>
           <S.TextSubreddit>
             r/
