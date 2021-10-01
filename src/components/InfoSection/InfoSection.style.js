@@ -6,7 +6,12 @@ margin-left: 20px;
 display: flex;
 flex-direction: column;
 padding-top: 118px;
-padding-bottom: 36px;`;
+padding-bottom: 36px;
+
+@media (max-width:820px) {
+  margin: 10px;
+}
+`;
 
 export const WrapperHowItWorks = styled.article`
 `;
