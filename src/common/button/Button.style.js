@@ -12,4 +12,9 @@ export const Button = styled.button`
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  text-transform: uppercase;`;
+  text-transform: uppercase;
+
+@media (max-width: 700px) {
+  padding: 0 8px;
+}
+  `;
