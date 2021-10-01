@@ -1,6 +1,7 @@
 import React from 'react';
 import defaultSubreddit from '../../utils/defaultSubreddit';
 import * as S from './HeroSection.style';
+import Button from '../../common/button/index';
 
 export default function HeroSection() {
   return (
@@ -11,11 +12,13 @@ export default function HeroSection() {
           Great timing, great results! Find the best time to post on
           your subreddit.
         </S.SubTitle>
-        <S.WrapperButton>
-          <S.Button to={`/search/${defaultSubreddit}`}>
-            Show me the best time
-          </S.Button>
-        </S.WrapperButton>
+        <S.ContainerButton>
+          <S.WrapperButton to={`/search/${defaultSubreddit}`}>
+            <Button>
+              Show me the best time
+            </Button>
+          </S.WrapperButton>
+        </S.ContainerButton>
         <S.WrapperSubreddit>
           <S.TextSubreddit>
             r/

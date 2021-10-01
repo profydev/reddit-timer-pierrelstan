@@ -11,6 +11,7 @@ import Header from './components/Header/Header';
 import NoMatch from './components/NoMatch/NoMatch';
 import Home from './pages/Home';
 import Search from './pages/Search';
+import Terms from './pages/Terms';
 import GlobalStyle from './utils/GlobalStyle';
 import theme from './utils/theme';
 
@@ -24,10 +25,13 @@ function App() {
           <div className="wrapper">
             <Header />
             <Switch>
-              <Route exact path="/search/javascript">
+              <Route path="/search/:subreddit">
                 <Search />
               </Route>
-              <Route path="/">
+              <Route path="/terms">
+                <Terms />
+              </Route>
+              <Route exact path="/">
                 <Home />
               </Route>
               <Route exact path="*">

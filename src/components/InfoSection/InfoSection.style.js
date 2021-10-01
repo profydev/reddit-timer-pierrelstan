@@ -1,24 +1,17 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const Container = styled.div`
-width: 100%;
-max-width: 778px;
-height:458px;
-margin: 119px auto 0;
-padding: 0px 20px;
-
-@media (max-width:850px){
-  padding:0;
-  height:auto;
-}
-`;
-
 export const Wrapper = styled.div`
-margin-top: 119px;
 margin-left: 20px;
 display: flex;
-flex-direction: column;`;
+flex-direction: column;
+padding-top: 118px;
+padding-bottom: 36px;
+
+@media (max-width:820px) {
+  margin: 10px;
+}
+`;
 
 export const WrapperHowItWorks = styled.article`
 `;
@@ -27,7 +20,7 @@ margin-top: 92px;
 margin-bottom: 40px;`;
 
 export const Title = styled.h1`
-font-size:${({ theme }) => theme.font.size.medium};
+font-size:${({ theme }) => theme.font.size.large};
 line-height:1.2;
 margin-bottom: 9px`;
 

@@ -1,12 +1,13 @@
 import React from 'react';
 import * as S from './InfoSection.style';
+import Container from '../../common/container/index';
 
 export default function InfoSection() {
   const DATA = ['• We find the 500 top posts from the past year for a subreddit.',
     '• The data is visualized in a heatmap grouped by weekday and hour of the day.',
     '• See immediately when to submit your reddit post.'];
   return (
-    <S.Container>
+    <Container>
       <S.Wrapper>
         <S.WrapperHowItWorks id="how-it-works">
           <S.Title>How it works</S.Title>
@@ -38,6 +39,6 @@ export default function InfoSection() {
           </S.Text>
         </S.WrapperAbout>
       </S.Wrapper>
-    </S.Container>
+    </Container>
   );
 }

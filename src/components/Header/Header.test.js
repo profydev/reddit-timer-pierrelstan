@@ -38,7 +38,7 @@ describe(' Testing Header Navigation', () => {
     const searchLink = screen.getByRole('link', { name: /search/i });
     userEvent.click(searchLink);
 
-    expect(screen.getByText(/search page/i)).toBeInTheDocument();
+    expect(screen.getByText(/find the best time for a subreddit/i)).toBeInTheDocument();
     expect(Testhistory.location.pathname).toEqual('/search/javascript');
   });
 

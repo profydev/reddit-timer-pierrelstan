@@ -6,6 +6,7 @@ const theme = {
     midLight: '#93918F',
     light: '#ffffff',
     blue: '#3c88d5',
+    apricotYellow: '#FDB755',
   },
   font: {
     family: {
@@ -15,8 +16,9 @@ const theme = {
     size: {
       default: '16px',
       small: '14px',
-      medium: '24px',
-      large: '38px',
+      medium: '18px',
+      large: '24px',
+      extraLarge: '38px',
     },
     lineHeight: {
       default: 1.69,

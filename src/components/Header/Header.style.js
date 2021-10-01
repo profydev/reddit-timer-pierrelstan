@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom';
 import { ReactComponent } from './logo.svg';
 
 export const ContainerHeader = styled.header`
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 100;
   background-color: #fff;
 `;
 
@@ -19,9 +15,8 @@ export const Wrapper = styled.div`
   margin: 0 80px;
   @media (max-width: 768px) {
     flex-direction: column;
-    margin-left: 10px;
-    margin-right: 10px;
     height: 75px;
+    margin: 0;
   }
 `;
 
