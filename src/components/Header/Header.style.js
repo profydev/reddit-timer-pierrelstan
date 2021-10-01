@@ -15,9 +15,8 @@ export const Wrapper = styled.div`
   margin: 0 80px;
   @media (max-width: 768px) {
     flex-direction: column;
-    margin-left: 10px;
-    margin-right: 10px;
     height: 75px;
+    margin: 0;
   }
 `;
 
