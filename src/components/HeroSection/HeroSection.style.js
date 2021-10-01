@@ -6,7 +6,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 width: 100%;
-padding-top: 127px ;`;
+padding-top: 22px ;`;
 
 export const Wrapper = styled.div`
 text-align:center;`;
@@ -35,24 +35,11 @@ color: ${({ theme }) => theme.color.midLight};
 font-weight: 100;
 margin-top:21px`;
 
-export const Button = styled(Link)`
-background-color:#FDB755;
-color:${({ theme }) => theme.color.light};
-border-radius: 4px;
-text-transform: uppercase;
-padding: 9px 16px;
-text-decoration: none;
-font-family: ${({ theme }) => theme.font.family.default};
-font-style: normal;
-font-weight: 400;
-font-size:  ${({ theme }) => theme.font.size.small};
-line-height: 9px;`;
-
 export const WrapperButton = styled.div`
-margin-top: 48px `;
+margin-top: 44px `;
 
 export const TextSubreddit = styled.p`
-margin-top: 48px;
+margin-top: 44px;
 font-family:${({ theme }) => theme.font.family.default};
 font-style: normal;
 font-weight: 200;
@@ -61,8 +48,7 @@ margin-bottom: 0;
 color: ${({ theme }) => theme.color.midLight};
 text-decoration: none`;
 
-export const WrapperSubreddit = styled.div`
-margin-top: 48px`;
+export const WrapperSubreddit = styled.div``;
 
 export const WrapperTable = styled.div`
 display: flex;
