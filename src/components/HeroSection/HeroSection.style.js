@@ -1,12 +1,19 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+export const WrapperButton = styled(Link)`
+text-decoration:none;
+padding:8px 14px;`;
+
+export const ContainerButton = styled.div`
+margin-top: 44px`;
+
 export const Container = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: center;
 width: 100%;
-padding-top: 22px ;`;
+padding-top: 22px;`;
 
 export const Wrapper = styled.div`
 text-align:center;`;
@@ -22,7 +29,6 @@ justify-content:center;
 `;
 
 export const Title = styled.h1`
-font-size: ${({ theme }) => theme.font.size};
 line-height: 46px;
 margin:0;
 padding:0;`;
@@ -34,9 +40,6 @@ line-height: 20px;
 color: ${({ theme }) => theme.color.midLight};
 font-weight: 100;
 margin-top:21px`;
-
-export const WrapperButton = styled.div`
-margin-top: 44px `;
 
 export const TextSubreddit = styled.p`
 margin-top: 44px;
