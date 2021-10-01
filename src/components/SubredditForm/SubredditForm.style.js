@@ -31,4 +31,8 @@ margin-bottom: 0;
 margin-left:10px;
 margin-top: 2px;
 line-height: 1.15;
+
+@media (max-width: 700px) {
+  width:auto;
+}
 `;
