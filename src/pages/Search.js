@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import SubredditForm from '../components/SubredditForm/SubredditForm';
+import Container from '../common/container/index';
 
 export default function Search() {
   const history = useHistory();
@@ -23,12 +24,12 @@ export default function Search() {
     history.push(url);
   };
   return (
-    <div>
+    <Container>
       <SubredditForm
         handleChangeState={handleChangeState}
         handleSubmitState={handleSubmitState}
         search={search}
       />
-    </div>
+    </Container>
   );
 }
