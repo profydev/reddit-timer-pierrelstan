@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './SubredditForm.style';
+import Button from '../../common/button/index';
 
 function SubredditForm({
   search,
@@ -14,16 +15,16 @@ function SubredditForm({
     handleSubmitState(e);
   };
   return (
-    <S.Container>
+    <S.Wrapper>
       <S.Title>Find the best time for a subreddit</S.Title>
       <S.Form onSubmit={handleSubmit}>
         <S.Label>
           r /
           <S.Input name="search" type="text" value={search} onChange={handleChange} />
         </S.Label>
-        <S.Button type="submit">Search</S.Button>
+        <Button type="submit">Search</Button>
       </S.Form>
-    </S.Container>
+    </S.Wrapper>
   );
 }
 
