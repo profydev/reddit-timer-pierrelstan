@@ -1,36 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useForm } from 'react-hook-form';
 import * as S from './SubredditForm.style';
 import Button from '../../common/button/index';
 
 function SubredditForm({
-  search,
-  handleChangeState,
-  handleSubmitState,
+  values,
+  OnChange,
+  OnSubmit,
 }) {
+  const { register, handleSubmit } = useForm();
+
   const handleChange = (e) => {
-    handleChangeState(e);
+    OnChange(e);
   };
-  const handleSubmit = (e) => {
-    handleSubmitState(e);
-  };
+
   return (
-    <S.Wrapper>
-      <S.Title>Find the best time for a subreddit</S.Title>
-      <S.Form onSubmit={handleSubmit}>
-        <S.Label>
-          r /
-          <S.Input name="search" type="text" value={search} onChange={handleChange} />
-        </S.Label>
-        <Button type="submit">Search</Button>
-      </S.Form>
-    </S.Wrapper>
+    <S.Form onSubmit={handleSubmit((data) => {
+      OnSubmit(data);
+    })}
+    >
+      <S.Label>
+        r /
+        {/* eslint-disable-next-line */}
+          <S.Input {...register('values')} type="text" value={values} onChange={handleChange} />
+      </S.Label>
+      <Button type="submit">Search</Button>
+    </S.Form>
   );
 }
 
 SubredditForm.propTypes = {
-  search: PropTypes.string.isRequired,
-  handleChangeState: PropTypes.func.isRequired,
-  handleSubmitState: PropTypes.func.isRequired,
+  values: PropTypes.string.isRequired,
+  OnChange: PropTypes.func.isRequired,
+  OnSubmit: PropTypes.func.isRequired,
 };
 export default SubredditForm;

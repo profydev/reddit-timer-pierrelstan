@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
+import * as S from '../components/SubredditForm/SubredditForm.style';
 import SubredditForm from '../components/SubredditForm/SubredditForm';
 import Container from '../common/container/index';
 
@@ -8,28 +9,30 @@ export default function Search() {
 
   const { subreddit } = useParams();
 
-  const [search, setSearch] = useState('');
+  const [values, setValues] = useState('');
 
   useEffect(() => {
-    setSearch(subreddit);
+    setValues(subreddit);
   }, [subreddit]);
 
-  const handleChangeState = (e) => {
-    setSearch(e.target.value);
+  const OnChange = ({ target }) => {
+    setValues(target.value);
   };
 
-  const handleSubmitState = (e) => {
-    e.preventDefault();
-    const url = `/search/${search}`;
+  const OnSubmit = () => {
+    const url = `/search/${values}`;
     history.push(url);
   };
   return (
     <Container>
-      <SubredditForm
-        handleChangeState={handleChangeState}
-        handleSubmitState={handleSubmitState}
-        search={search}
-      />
+      <S.Wrapper>
+        <S.Title>Find the best time for a subreddit</S.Title>
+        <SubredditForm
+          OnChange={OnChange}
+          OnSubmit={OnSubmit}
+          values={values}
+        />
+      </S.Wrapper>
     </Container>
   );
 }
