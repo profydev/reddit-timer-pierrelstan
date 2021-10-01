@@ -1,24 +1,12 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const Container = styled.div`
-width: 100%;
-max-width: 778px;
-height:458px;
-margin: 119px auto 0;
-padding: 0px 20px;
-
-@media (max-width:850px){
-  padding:0;
-  height:auto;
-}
-`;
-
 export const Wrapper = styled.div`
-margin-top: 119px;
 margin-left: 20px;
 display: flex;
-flex-direction: column;`;
+flex-direction: column;
+padding-top: 118px;
+padding-bottom: 36px;`;
 
 export const WrapperHowItWorks = styled.article`
 `;
