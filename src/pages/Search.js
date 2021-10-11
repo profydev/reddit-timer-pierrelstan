@@ -24,7 +24,8 @@ export default function Search() {
   }, [subreddit]);
 
   const OnChange = ({ target }) => {
-    setValues(target.value);
+    const removeSpaceInValue = target.value.replace(/\s/g, '');
+    setValues(removeSpaceInValue);
   };
 
   const OnSubmit = async () => {
