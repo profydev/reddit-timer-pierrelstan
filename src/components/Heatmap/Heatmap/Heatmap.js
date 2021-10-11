@@ -5,7 +5,13 @@ import * as S from './Heatmap.style';
 export default function Heatmap({ data, loading, error }) {
   return (
     <S.Container>
-      {error && <p>No such subreddit!!</p>}
+      {error && (
+      <S.ErrorContainer>
+        {' '}
+        Something went wrong.
+        Please check the subreddit you entered and try again.
+      </S.ErrorContainer>
+      )}
       {loading && (
       <S.LoadingContainer>
         <S.LoadingSpinner />
