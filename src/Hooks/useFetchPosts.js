@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import fetchPosts from '../API/LoadTheData/FetchPosts';
+import FetchPaginatedPosts from '../API/LoadTheData/FetchPaginatedPosts';
 
 const useFetchPosts = (url = '', options = null) => {
   const [data, setData] = useState([]);
@@ -11,9 +11,10 @@ const useFetchPosts = (url = '', options = null) => {
     const posts = [];
     setLoading(true);
     setError(null);
+    setData([]);
     async function loadData() {
       try {
-        const results = await fetchPosts(url, posts);
+        const results = await FetchPaginatedPosts(url, posts);
         if (isMounted) {
           setData(results);
           setLoading(false);
@@ -21,8 +22,8 @@ const useFetchPosts = (url = '', options = null) => {
         }
       } catch (err) {
         setError(err);
+      } finally {
         setLoading(false);
-        setData([]);
       }
     }
     loadData();
