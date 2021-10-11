@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './Heatmap.style';
 
-export default function Heatmap({ data, loading, error }) {
+export default function Heatmap({ Posts, loading, error }) {
   return (
     <S.Container>
       {error && (
@@ -18,20 +18,20 @@ export default function Heatmap({ data, loading, error }) {
       </S.LoadingContainer>
       )}
       <p>
-        {data.length}
+        {Posts.length}
       </p>
     </S.Container>
   );
 }
 
 Heatmap.defaultsProps = {
-  data: [],
+  Posts: [],
   loading: false,
   error: null,
 };
 
 Heatmap.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  Posts: PropTypes.arrayOf(PropTypes.object).isRequired,
   loading: PropTypes.bool.isRequired,
   error: PropTypes.string.isRequired,
 };

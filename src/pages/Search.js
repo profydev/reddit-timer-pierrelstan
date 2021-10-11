@@ -14,7 +14,7 @@ export default function Search() {
   const [values, setValues] = useState('');
 
   const {
-    loading, error, data = [],
+    loading, error, Posts = [],
   } = useFetchPosts(
     `https://www.reddit.com/r/${subreddit}/top.json?t=year&limit=100`,
   );
@@ -42,7 +42,7 @@ export default function Search() {
           values={values}
         />
       </S.Wrapper>
-      <Heatmap data={data} loading={loading} error={error} />
+      <Heatmap Posts={Posts} loading={loading} error={error} />
     </Container>
   );
 }

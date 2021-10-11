@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import FetchPaginatedPosts from '../API/LoadTheData/FetchPaginatedPosts';
 
 const useFetchPosts = (url = '', options = null) => {
-  const [data, setData] = useState([]);
+  const [Posts, setPosts] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -11,12 +11,12 @@ const useFetchPosts = (url = '', options = null) => {
     const posts = [];
     setLoading(true);
     setError(null);
-    setData([]);
+    setPosts([]);
     async function loadData() {
       try {
         const results = await FetchPaginatedPosts(url, posts);
         if (isMounted) {
-          setData(results);
+          setPosts(results);
           setLoading(false);
           setError(null);
         }
@@ -33,7 +33,7 @@ const useFetchPosts = (url = '', options = null) => {
   }, [url, options]);
 
   return {
-    loading, error, data,
+    loading, error, Posts,
   };
 };
 
