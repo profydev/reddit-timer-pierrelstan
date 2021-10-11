@@ -32,7 +32,7 @@ export default function Search() {
     history.push(SubredditUrl);
   };
   return (
-    <Container>
+    <Container as="section">
       <S.Wrapper>
         <S.Title>Find the best time for a subreddit</S.Title>
         <SubredditForm
