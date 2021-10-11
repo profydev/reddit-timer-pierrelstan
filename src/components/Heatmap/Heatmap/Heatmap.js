@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Spinner from '../Spinner/Spinner';
 import * as S from './Heatmap.style';
 
 export default function Heatmap({ data, loading, error }) {
   return (
     <S.Container>
       {error && <p>No such subreddit!!</p>}
-      {loading && <Spinner />}
+      {loading && (
+      <S.LoadingContainer>
+        <S.LoadingSpinner />
+      </S.LoadingContainer>
+      )}
       <p>
         {data.length}
       </p>
