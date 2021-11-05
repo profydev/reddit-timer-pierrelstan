@@ -4,7 +4,7 @@ import {
 } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom/cjs/react-router-dom.min';
 import userEvent from '@testing-library/user-event';
-import App from '../../App';
+import App from '../App';
 
 const setup = () => {
   render(

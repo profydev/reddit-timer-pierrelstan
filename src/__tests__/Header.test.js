@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter, Route } from 'react-router-dom/cjs/react-router-dom.min';
 import userEvent from '@testing-library/user-event';
-import App from '../../App';
+import App from '../App';
 
 const setup = (initialPath = '/') => {
   let Testhistory;

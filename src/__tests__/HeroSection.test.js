@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom/cjs/react-router-dom.min';
-import App from '../../App';
+import App from '../App';
 
 const setup = () => render(
   <MemoryRouter>

@@ -9,9 +9,9 @@ import { Normalize } from 'styled-normalize';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import NoMatch from './components/NoMatch/NoMatch';
-import Home from './pages/Home';
-import Search from './pages/Search';
-import Terms from './pages/Terms';
+import Home from './pages/home-page/Home';
+import Search from './pages/search-page/Search';
+import Terms from './pages/terms-page/Terms';
 import GlobalStyle from './utils/GlobalStyle';
 import theme from './utils/theme';
 

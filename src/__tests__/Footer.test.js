@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, within } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom/cjs/react-router-dom.min';
 import userEvent from '@testing-library/user-event';
-import App from '../../App';
+import App from '../App';
 
 const setup = (initialPath = '/') => {
   render(
