@@ -4,7 +4,7 @@ import * as S from '../../components/SubredditForm/SubredditForm.style';
 import SubredditForm from '../../components/SubredditForm/SubredditForm';
 import Container from '../../common/container/index';
 import useFetchPosts from '../../Hooks/useFetchPosts';
-import Heatmap from '../../components/Heatmap/Heatmap/Heatmap';
+import Heatmap from '../../components/Heatmap/Heatmap';
 
 export default function Search() {
   const history = useHistory();
@@ -12,15 +12,14 @@ export default function Search() {
   const { subreddit } = useParams();
 
   const [values, setValues] = useState('');
-
   const {
-    loading, error, Posts = [],
-  } = useFetchPosts(
-    `https://www.reddit.com/r/${subreddit}/top.json?t=year&limit=100`,
-  );
-
+    isLoading, hasError, Posts = [],
+  } = useFetchPosts(subreddit);
   useEffect(() => {
     setValues(subreddit);
+    // return () => {
+    //   setValues('');
+    // };
   }, [subreddit]);
 
   const OnChange = ({ target }) => {
@@ -29,7 +28,7 @@ export default function Search() {
   };
 
   const OnSubmit = async () => {
-    const SubredditUrl = `/search/${values}`;
+    const SubredditUrl = await `/search/${values}`;
     history.push(SubredditUrl);
   };
   return (
@@ -42,7 +41,7 @@ export default function Search() {
           values={values}
         />
       </S.Wrapper>
-      <Heatmap Posts={Posts} loading={loading} error={error} />
+      <Heatmap Posts={Posts} isLoading={isLoading} hasError={hasError} />
     </Container>
   );
 }
