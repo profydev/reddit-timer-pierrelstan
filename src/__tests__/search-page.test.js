@@ -14,7 +14,7 @@ describe('Testing Search Page', () => {
 
     setup(<App />, { route });
     await waitFor(async () => {
-     expect(await screen.findByText(/something went wrong/i)).toBeInTheDocument();
+      expect(await screen.findByText(/something went wrong/i)).toBeInTheDocument();
     });
   });
 

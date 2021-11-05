@@ -1,5 +1,5 @@
 import React from 'react';
-import { renderHook  } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react-hooks';
 import { BrowserRouter } from 'history';
 import { render, screen } from '@testing-library/react';
 import useFetchPosts from '../Hooks/useFetchPosts';
@@ -30,8 +30,7 @@ describe('Testing useFetchPosts', () => {
     setup(<App />, { route });
 
     screen.queryByText('loading-spinner.svg');
-      expect(await screen.findByText(/270/i)).toBeInTheDocument();
-
+    expect(await screen.findByText(/270/i)).toBeInTheDocument();
   });
 
   test('returns error when a request fails', async () => {
