@@ -1,39 +1,31 @@
 import { useState, useEffect } from 'react';
-import FetchPaginatedPosts from '../API/LoadTheData/FetchPaginatedPosts';
+import LoadTheData from '../API/LoadTheData/LoadTheData';
 
-const useFetchPosts = (url = '', options = null) => {
+const useFetchPosts = (subreddit) => {
   const [Posts, setPosts] = useState([]);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState('pending');
 
   useEffect(() => {
-    let isMounted = true;
-    const posts = [];
-    setLoading(true);
-    setError(null);
-    setPosts([]);
-    async function loadData() {
-      try {
-        const results = await FetchPaginatedPosts(url, posts);
-        if (isMounted) {
-          setPosts(results);
-          setLoading(false);
-          setError(null);
-        }
-      } catch (err) {
-        setError(err);
-      } finally {
-        setLoading(false);
-      }
-    }
-    loadData();
-    return () => {
-      isMounted = false;
-    };
-  }, [url, options]);
+    /* eslint-disable */
+    const url =`https://www.reddit.com/r/${subreddit}/top.json?t=year&limit=100`;
 
+    setStatus('pending');
+    LoadTheData(url)
+      .then((newPosts) => {
+        setPosts([]);
+        setPosts(newPosts);
+        setStatus('resolved');
+      })
+      .catch(() => {
+        setStatus('rejected');
+        setPosts([]);
+      })
+  }, [subreddit]);
   return {
-    loading, error, Posts,
+    isLoading: status === 'pending',
+    hasError: status === 'rejected',
+    Posts,
+    setStatus,
   };
 };
 
