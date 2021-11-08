@@ -4,7 +4,7 @@ import * as S from '../../components/SubredditForm/SubredditForm.style';
 import SubredditForm from '../../components/SubredditForm/SubredditForm';
 import Container from '../../common/container/index';
 import useFetchPosts from '../../Hooks/useFetchPosts';
-import Heatmap from '../../components/Heatmap/Heatmap';
+import HeatmapSection from '../../components/Heatmap/Heatmap';
 
 export default function Search() {
   const history = useHistory();
@@ -41,7 +41,7 @@ export default function Search() {
           values={values}
         />
       </S.Wrapper>
-      <Heatmap Posts={Posts} isLoading={isLoading} hasError={hasError} />
+      <HeatmapSection Posts={Posts} isLoading={isLoading} hasError={hasError} />
     </Container>
   );
 }
