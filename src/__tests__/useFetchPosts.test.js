@@ -1,41 +1,44 @@
-import React from 'react';
+// import React from 'react';
 import { renderHook } from '@testing-library/react-hooks';
-import { BrowserRouter } from 'history';
-import { render, screen } from '@testing-library/react';
 import useFetchPosts from '../Hooks/useFetchPosts';
-import App from '../App';
 
-const setup = (ui, { route = '/' } = {}) => {
-  window.history.pushState({}, 'Test Search page', route);
-  return render(ui, { wrapper: BrowserRouter });
-};
+const getNumPosts = (nestedPostsArray) => nestedPostsArray.reduce(
+  (numTotal, postsPerDay) => postsPerDay.reduce(
+    (numPerDay, postsPerHour) => numPerDay + postsPerHour, numTotal,
+  ),
+  0,
+);
 
 describe('Testing useFetchPosts', () => {
   it('It fetch 500 top posts from the reddit API', async () => {
     const { result, waitForNextUpdate } = renderHook(() => useFetchPosts('500-posts'));
-    expect(result.current.Posts).toEqual([]);
+    expect(result.current.postsPerDay).toEqual([]);
+
     expect(result.current.isLoading).toBe(true);
 
     await waitForNextUpdate();
 
-    expect(await result.current.Posts.length).toEqual(500);
+    expect(getNumPosts(result.current.postsPerDay)).toEqual(500);
 
     expect(await result.current.isLoading).toBe(false);
-    const postTitles = await result.current.Posts.map(({ data }) => data.title);
-    expect(postTitles).toMatchSnapshot();
+    expect(result.current.postsPerDay).toMatchSnapshot();
   });
 
   test('returns less than 500 posts', async () => {
-    const route = '/search/less-than-500-posts';
-    setup(<App />, { route });
+    const { result, waitForNextUpdate } = renderHook(() => useFetchPosts('less-than-500-posts'));
 
-    screen.queryByText('loading-spinner.svg');
-    expect(await screen.findByText(/270/i)).toBeInTheDocument();
+    await waitForNextUpdate();
+
+    expect(result.current.isLoading).toBe(false);
+    expect(getNumPosts(result.current.postsPerDay)).toEqual(270);
   });
 
   test('returns error when a request fails', async () => {
-    const route = '/search/failing-request';
-    setup(<App />, { route });
-    expect(await screen.findByText(/something went wrong/i)).toBeInTheDocument();
+    const { result, waitForNextUpdate } = renderHook(() => useFetchPosts('failing-request'));
+
+    await waitForNextUpdate();
+
+    expect(result.current.isLoading).toBe(false);
+    expect(result.current.hasError).toEqual(true);
   });
 });
