@@ -1,89 +1,46 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-// import * as S from './Heatmap.style';
+import {
+  arrayOf,
+  func,
+  number,
+  shape,
+} from 'prop-types';
+import HeatmapHeaderRow from './HeatmapHeaderRow';
+import HeatmapRow from './HeatmapRow';
+import * as S from './Heatmap.style';
 
-export default function HeatmapSection() {
+function Heatmap({ postsPerDay, onClickHour, selectedDayAndHour }) {
   return (
-    <div>
-      <table>
-        <thead>
-          <tr>
-            <th>`&quot;`</th>
-            <th>12:00am</th>
-            <th>2:00am</th>
-            <th>4:00am</th>
-            <th>6:00am</th>
-            <th>8:00am</th>
-            <th>10:00am</th>
-            <th>12:00pm</th>
-            <th>2:00pm</th>
-            <th>4:00pm</th>
-            <th>6:00pm</th>
-            <th>8:00pm</th>
-            <th>10:00pm</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>Sunday</th>
-            <td>1</td>
-            <td>3</td>
-            <td>6</td>
-            <td>1</td>
-            <td>1</td>
-            <td>7</td>
-            <td>9</td>
-            <td>8</td>
-            <td>9</td>
-            <td>3</td>
-            <td>1</td>
-            <td>1</td>
-            <td>7</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
+    <S.Container data-testid="heatmap">
+      <HeatmapHeaderRow />
 
-          </tr>
-          <tr>
-            <th>Monday</th>
-          </tr>
-          <tr>
-            <th>Tuesday</th>
-          </tr>
-          <tr>
-            <th>Wednesday</th>
-          </tr>
-          <tr>
-            <th>Thursday</th>
-          </tr>
-          <tr>
-            <th>Friday</th>
-          </tr>
-          <tr>
-            <th>Saturday</th>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+      {postsPerDay.map((postsPerHour, day) => (
+        <HeatmapRow
+            // eslint-disable-next-line react/no-array-index-key
+          key={day}
+          day={day}
+          postsPerHour={postsPerHour}
+          onClickHour={onClickHour}
+          selectedHour={selectedDayAndHour.day === day ? selectedDayAndHour.hour : null}
+        />
+      ))}
+
+      <S.TimezoneWrapper>
+        All times are shown in your timezone:
+        {' '}
+        <S.Timezone>{Intl.DateTimeFormat().resolvedOptions().timeZone}</S.Timezone>
+      </S.TimezoneWrapper>
+    </S.Container>
   );
 }
 
-// HeatmapSection.defaultsProps = {
-//   Posts: [],
-//   isLoading: false,
-//   hasError: false,
-// };
+Heatmap.propTypes = {
+  postsPerDay: arrayOf(arrayOf(number)).isRequired,
+  onClickHour: func.isRequired,
+  selectedDayAndHour: shape({
+    day: number,
+    hour: number,
+  }).isRequired,
+};
 
-// HeatmapSection.propTypes = {
-//   Posts: PropTypes.arrayOf(PropTypes.object).isRequired,
-//   isLoading: PropTypes.bool.isRequired,
-//   hasError: PropTypes.bool.isRequired,
-// };
+export default Heatmap;
