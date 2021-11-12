@@ -13,7 +13,7 @@ text-align:center;
 
 export const Form = styled.form``;
 
-export const Title = styled.h1`
+export const Headline = styled.h1`
 color: ${({ theme }) => theme.color.dark};
 margin-top: 12px;
 margin-bottom: 20px;
