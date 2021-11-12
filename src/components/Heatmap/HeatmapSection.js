@@ -1,8 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Heatmap from './Heatmap';
 import * as S from './Heatmap.style';
 
-export default function Heatmap({ isLoading, hasError, Posts }) {
+export default function HeatmapSection({
+  isLoading, hasError, postsPerDay, selectedDayAndHour, setSelectedDayAndHour,
+}) {
   return (
     <S.Container>
       {hasError && (
@@ -16,21 +19,28 @@ export default function Heatmap({ isLoading, hasError, Posts }) {
         <S.LoadingSpinner data-testid="loading" />
       </S.LoadingContainer>
       )}
-      <div data-testid="500-posts">
-        {Posts.length}
-      </div>
+      <Heatmap
+        postsPerDay={postsPerDay}
+        selectedDayAndHour={selectedDayAndHour}
+        onClickHour={setSelectedDayAndHour}
+        data-testid="heatmap"
+      />
     </S.Container>
   );
 }
 
-Heatmap.defaultsProps = {
-  Posts: [],
+HeatmapSection.defaultsProps = {
+  postsPerDay: [],
   isLoading: false,
   hasError: false,
+  selectedDayAndHour: {},
+  setSelectedDayAndHour: () => {},
 };
 
-Heatmap.propTypes = {
-  Posts: PropTypes.arrayOf(PropTypes.object).isRequired,
+HeatmapSection.propTypes = {
+  postsPerDay: PropTypes.instanceOf(Array).isRequired,
   isLoading: PropTypes.bool.isRequired,
   hasError: PropTypes.bool.isRequired,
+  selectedDayAndHour: PropTypes.objectOf(PropTypes.any).isRequired,
+  setSelectedDayAndHour: PropTypes.func.isRequired,
 };
