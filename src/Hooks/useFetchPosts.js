@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import LoadTheData from '../API/LoadTheData/LoadTheData';
+import { fetchPaginatedPosts, groupPostsPerDayAndHour } from '../API/LoadTheData/FetchPaginatedPosts';
 
 const useFetchPosts = (subreddit) => {
-  const [Posts, setPosts] = useState([]);
+  const [postsPerDay, setPostsPerDay] = useState([]);
   const [status, setStatus] = useState('pending');
 
   useEffect(() => {
@@ -10,22 +10,21 @@ const useFetchPosts = (subreddit) => {
     const url =`https://www.reddit.com/r/${subreddit}/top.json?t=year&limit=100`;
 
     setStatus('pending');
-    LoadTheData(url)
-      .then((newPosts) => {
-        setPosts([]);
-        setPosts(newPosts);
+    fetchPaginatedPosts(url)
+    .then((posts) => groupPostsPerDayAndHour(posts))
+      .then((newpostsPerDay) => {
+        setPostsPerDay(newpostsPerDay);
         setStatus('resolved');
       })
       .catch(() => {
         setStatus('rejected');
-        setPosts([]);
+        setPostsPerDay([]);
       })
   }, [subreddit]);
   return {
     isLoading: status === 'pending',
     hasError: status === 'rejected',
-    Posts,
-    setStatus,
+    postsPerDay
   };
 };
 
