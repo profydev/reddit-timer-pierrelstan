@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import * as S from '../../components/SubredditForm/SubredditForm.style';
-import SubredditForm from '../../components/SubredditForm/SubredditForm';
-import Container from '../../common/container/index';
 import useFetchPosts from '../../Hooks/useFetchPosts';
-import HeatmapSection from '../../components/Heatmap/Heatmap';
+import HeatmapSection from '../../components/Heatmap/HeatmapSection';
+import FormSection from '../../components/SubredditForm/FormSection';
 
 export default function Search() {
   const history = useHistory();
@@ -13,13 +11,11 @@ export default function Search() {
 
   const [values, setValues] = useState('');
   const {
-    isLoading, hasError, Posts = [],
+    isLoading, hasError, postsPerDay = [],
   } = useFetchPosts(subreddit);
+  const [selectedDayAndHour, setSelectedDayAndHour] = useState({ day: null, hour: null });
   useEffect(() => {
     setValues(subreddit);
-    // return () => {
-    //   setValues('');
-    // };
   }, [subreddit]);
 
   const OnChange = ({ target }) => {
@@ -32,16 +28,16 @@ export default function Search() {
     history.push(SubredditUrl);
   };
   return (
-    <Container as="section">
-      <S.Wrapper>
-        <S.Title>Find the best time for a subreddit</S.Title>
-        <SubredditForm
-          OnChange={OnChange}
-          OnSubmit={OnSubmit}
-          values={values}
-        />
-      </S.Wrapper>
-      <HeatmapSection Posts={Posts} isLoading={isLoading} hasError={hasError} />
-    </Container>
+    <>
+      <FormSection OnSubmit={OnSubmit} OnChange={OnChange} values={values} />
+      <HeatmapSection
+        postsPerDay={postsPerDay}
+        isLoading={isLoading}
+        hasError={hasError}
+        selectedDayAndHour={selectedDayAndHour}
+        setSelectedDayAndHour={setSelectedDayAndHour}
+        onClickHour={setSelectedDayAndHour}
+      />
+    </>
   );
 }
