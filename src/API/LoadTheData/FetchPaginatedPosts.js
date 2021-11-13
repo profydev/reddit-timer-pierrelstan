@@ -17,15 +17,15 @@ const MAX_NUM_POSTS_PER_PAGE = 100;
  * @returns {array} list of top 500 posts for subreddit
  */
 
-async function fetchPaginatedPosts(url, previousPosts = [], after = null) {
-  const { data } = await makeRequest(url, after);
+async function fetchPaginatedPosts(url, source, previousPosts = [], after = null) {
+  const { data } = await makeRequest(url, source, after);
   const allPosts = previousPosts.concat(data.children);
   const lessThan100Posts = data && data.dist < MAX_NUM_POSTS_PER_PAGE;
   const moreThan100Posts = allPosts.length >= NUM_POSTS_TO_FETCH;
   if (lessThan100Posts || moreThan100Posts) {
     return allPosts;
   }
-  return fetchPaginatedPosts(url, allPosts, data.after);
+  return fetchPaginatedPosts(url, source, allPosts, data.after);
 }
 
 /**
