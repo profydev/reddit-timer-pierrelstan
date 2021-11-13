@@ -20,7 +20,7 @@ describe('Testing useFetchPosts', () => {
 
     expect(getNumPosts(result.current.postsPerDay)).toEqual(500);
 
-    expect(await result.current.isLoading).toBe(false);
+    expect(result.current.isLoading).toBe(false);
     expect(result.current.postsPerDay).toMatchSnapshot();
   });
 
