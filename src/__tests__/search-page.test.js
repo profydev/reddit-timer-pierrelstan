@@ -42,7 +42,7 @@ describe('Testing Search Page', () => {
     expect(numberOfPostsPerCell).toMatchSnapshot();
 
     const timezone = screen.getByText('All times are shown in your timezone:');
-    expect(within(timezone).getByText('America/Santo_Domingo')).toBeInTheDocument();
+    expect(within(timezone).getByText('Europe/Berlin')).toBeInTheDocument();
   });
 
   test('cell highlights on click', async () => {

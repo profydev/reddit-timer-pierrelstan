@@ -23,8 +23,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "TZ=America/Santo_Domingo react-scripts eject",
+    "test": "TZ=Europe/Berlin react-scripts test",
+    "eject": "react-scripts eject",
     "lint": "eslint .",
     "format": "eslint --fix .",
     "cypress": "cross-env TZ=Europe/Berlin cypress run",
