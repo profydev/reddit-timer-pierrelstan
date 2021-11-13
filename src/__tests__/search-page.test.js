@@ -59,12 +59,4 @@ describe('Testing Search Page', () => {
     userEvent.click(cellToClick);
     expect(cellToClick).toHaveStyle('border: 1px solid #1e2537');
   });
-  test('renders error message', async () => {
-    const route = '/search/failing-request';
-
-    setup(<App />, { route });
-
-    expect(await screen.findByText(/something went wrong/i)).toBeInTheDocument();
-    expect(screen.queryByText('loading-spinner.svg')).not.toBeInTheDocument();
-  });
 });
