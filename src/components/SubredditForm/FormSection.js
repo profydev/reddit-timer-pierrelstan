@@ -5,7 +5,7 @@ import * as S from './SubredditForm.style';
 
 export default function FormSection({ OnChange, OnSubmit, values }) {
   return (
-    <S.Wrapper>
+    <S.Wrapper as="section">
       <S.Headline>Find the best time for a subreddit</S.Headline>
       <SubredditForm
         OnChange={OnChange}
