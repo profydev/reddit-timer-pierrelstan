@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { arrayOf, func, number } from 'prop-types';
 import * as S from './HeatmapRow.style';
 
@@ -12,17 +12,16 @@ const weekdays = [
   'Saturday',
 ];
 
-function HeatmapRow({
+const HeatmapRow = memo(({
   day,
   postsPerHour,
   onClickHour,
   selectedHour,
-}) {
-  return (
-    <S.Container>
-      <S.Weekday>{weekdays[day]}</S.Weekday>
+}) => (
+  <S.Container>
+    <S.Weekday>{weekdays[day]}</S.Weekday>
 
-      {
+    {
         postsPerHour.map((numPosts, hour) => (
           <S.Hour
             // eslint-disable-next-line react/no-array-index-key
@@ -36,9 +35,8 @@ function HeatmapRow({
           </S.Hour>
         ))
       }
-    </S.Container>
-  );
-}
+  </S.Container>
+));
 
 HeatmapRow.propTypes = {
   day: number.isRequired,
