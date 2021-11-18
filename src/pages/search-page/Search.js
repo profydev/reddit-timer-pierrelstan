@@ -13,7 +13,9 @@ export default function Search() {
   const {
     isLoading, hasError, postsPerDay = [],
   } = useFetchPosts(subreddit);
+
   const [selectedDayAndHour, setSelectedDayAndHour] = useState({ day: null, hour: null });
+
   useEffect(() => {
     setValues(subreddit);
   }, [subreddit]);
