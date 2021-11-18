@@ -19,12 +19,17 @@ export default function HeatmapSection({
         <S.LoadingSpinner data-testid="loading" />
       </S.LoadingContainer>
       )}
-      <Heatmap
-        postsPerDay={postsPerDay}
-        selectedDayAndHour={selectedDayAndHour}
-        onClickHour={setSelectedDayAndHour}
-        data-testid="heatmap"
-      />
+      {
+        !isLoading && (
+        <Heatmap
+          postsPerDay={postsPerDay}
+          selectedDayAndHour={selectedDayAndHour}
+          onClickHour={setSelectedDayAndHour}
+          data-testid="heatmap"
+        />
+        )
+      }
+
     </S.Container>
   );
 }
