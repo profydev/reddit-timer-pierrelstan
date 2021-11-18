@@ -1,31 +1,46 @@
 import { useState, useEffect } from 'react';
-import LoadTheData from '../API/LoadTheData/LoadTheData';
+import axios from 'axios';
+import { fetchPaginatedPosts, groupPostsPerDayAndHour } from '../API/LoadTheData/FetchPaginatedPosts';
 
 const useFetchPosts = (subreddit) => {
-  const [Posts, setPosts] = useState([]);
+  const [postsPerDay, setPostsPerDay] = useState([]);
   const [status, setStatus] = useState('pending');
 
   useEffect(() => {
+    let unmounted = false;
+    const source = axios.CancelToken.source();
     /* eslint-disable */
     const url =`https://www.reddit.com/r/${subreddit}/top.json?t=year&limit=100`;
 
     setStatus('pending');
-    LoadTheData(url)
-      .then((newPosts) => {
-        setPosts([]);
-        setPosts(newPosts);
-        setStatus('resolved');
+    fetchPaginatedPosts(url, source)
+    .then((posts) => groupPostsPerDayAndHour(posts))
+      .then((newpostsPerDay) => {
+        if(!unmounted){
+          setPostsPerDay(newpostsPerDay);
+          setStatus('resolved');
+        }
       })
-      .catch(() => {
-        setStatus('rejected');
-        setPosts([]);
+      .catch((error) => {
+        if (!unmounted) {
+          setStatus('rejected');
+          setPostsPerDay([]);
+          if (axios.isCancel(error)) {
+            console.log(`request cancelled:${error.message}`);
+        } else {
+            console.log("another error happened:" + error.message);
+        }
+        }
       })
+      return () => {
+        unmounted = true;
+        source.cancel("cancel request!!");
+      }
   }, [subreddit]);
   return {
     isLoading: status === 'pending',
     hasError: status === 'rejected',
-    Posts,
-    setStatus,
+    postsPerDay
   };
 };
 

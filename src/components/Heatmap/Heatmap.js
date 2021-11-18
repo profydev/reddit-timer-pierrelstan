@@ -1,36 +1,46 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import {
+  arrayOf,
+  func,
+  number,
+  shape,
+} from 'prop-types';
+import HeatmapHeaderRow from './HeatmapHeaderRow';
+import HeatmapRow from './HeatmapRow';
 import * as S from './Heatmap.style';
 
-export default function Heatmap({ isLoading, hasError, Posts }) {
+function Heatmap({ postsPerDay, onClickHour, selectedDayAndHour }) {
   return (
-    <S.Container>
-      {hasError && (
-      <S.ErrorContainer>
+    <S.Container data-testid="heatmap">
+      <HeatmapHeaderRow />
+
+      {postsPerDay.map((postsPerHour, day) => (
+        <HeatmapRow
+            // eslint-disable-next-line react/no-array-index-key
+          key={day}
+          day={day}
+          postsPerHour={postsPerHour}
+          onClickHour={onClickHour}
+          selectedHour={selectedDayAndHour.day === day ? selectedDayAndHour.hour : null}
+        />
+      ))}
+
+      <S.TimezoneWrapper>
+        All times are shown in your timezone:
         {' '}
-        Something went wrong.
-      </S.ErrorContainer>
-      )}
-      {isLoading && (
-      <S.LoadingContainer>
-        <S.LoadingSpinner data-testid="loading" />
-      </S.LoadingContainer>
-      )}
-      <div data-testid="500-posts">
-        {Posts.length}
-      </div>
+        <S.Timezone>{Intl.DateTimeFormat().resolvedOptions().timeZone}</S.Timezone>
+      </S.TimezoneWrapper>
     </S.Container>
   );
 }
 
-Heatmap.defaultsProps = {
-  Posts: [],
-  isLoading: false,
-  hasError: false,
+Heatmap.propTypes = {
+  postsPerDay: arrayOf(arrayOf(number)).isRequired,
+  onClickHour: func.isRequired,
+  selectedDayAndHour: shape({
+    day: number,
+    hour: number,
+  }).isRequired,
 };
 
-Heatmap.propTypes = {
-  Posts: PropTypes.arrayOf(PropTypes.object).isRequired,
-  isLoading: PropTypes.bool.isRequired,
-  hasError: PropTypes.bool.isRequired,
-};
+export default Heatmap;

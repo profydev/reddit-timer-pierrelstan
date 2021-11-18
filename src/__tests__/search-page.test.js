@@ -1,5 +1,8 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import {
+  render, screen, waitFor, within,
+} from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { BrowserRouter } from 'history';
 import App from '../App';
 
@@ -25,11 +28,35 @@ describe('Testing Search Page', () => {
 
     screen.queryByText('loading-spinner.svg');
 
-    await waitFor(async () => {
-      expect(await screen.queryByTestId('500-posts')).toHaveTextContent(500);
+    expect(await screen.findByTestId('heatmap')).toBeInTheDocument();
+
+    await waitFor(() => {
+      expect(screen.queryByText('loading-spinner.svg')).not.toBeInTheDocument();
     });
-    await waitFor(async () => {
-      expect(await screen.queryByText('loading-spinner.svg')).not.toBeInTheDocument();
-    });
+
+    const heatmap = screen.getByTestId('heatmap');
+    const cells = await within(heatmap).findAllByRole('button');
+    expect(cells.length).toEqual(7 * 24);
+
+    const numberOfPostsPerCell = cells.map((cell) => cell.innerHTML);
+    expect(numberOfPostsPerCell).toMatchSnapshot();
+
+    const timezone = screen.getByText('All times are shown in your timezone:');
+    expect(within(timezone).getByText('Europe/Berlin')).toBeInTheDocument();
+  });
+
+  test('cell highlights on click', async () => {
+    const route = '/search/reactjs';
+
+    setup(<App />, { route });
+
+    const heatmap = await screen.findByTestId('heatmap');
+    const cells = await within(heatmap).findAllByRole('button');
+
+    const cellToClick = cells[1];
+    expect(cellToClick).toHaveStyle('border: none');
+
+    userEvent.click(cellToClick);
+    expect(cellToClick).toHaveStyle('border: 1px solid #1e2537');
   });
 });
