@@ -19,7 +19,6 @@ const MAX_NUM_POSTS_PER_PAGE = 100;
 
 async function fetchPaginatedPosts(url, source, previousPosts = [], after = null) {
   const { data } = await makeRequest(url, source, after);
-  console.log(data);
   const allPosts = previousPosts.concat(data.children);
   const lessThan100Posts = data && data.dist < MAX_NUM_POSTS_PER_PAGE;
   const moreThan100Posts = allPosts.length >= NUM_POSTS_TO_FETCH;
