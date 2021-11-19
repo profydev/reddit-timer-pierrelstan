@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { arrayOf, func, number } from 'prop-types';
+import { func, number, instanceOf } from 'prop-types';
 import * as S from './HeatmapRow.style';
 
 const weekdays = [
@@ -26,12 +26,12 @@ const HeatmapRow = memo(({
           <S.Hour
             // eslint-disable-next-line react/no-array-index-key
             key={hour}
-            numPosts={numPosts}
+            numPosts={numPosts.length}
             onClick={() => onClickHour({ day, hour })}
             selected={hour === selectedHour}
             type="button"
           >
-            {numPosts}
+            {numPosts.length}
           </S.Hour>
         ))
       }
@@ -40,7 +40,7 @@ const HeatmapRow = memo(({
 
 HeatmapRow.propTypes = {
   day: number.isRequired,
-  postsPerHour: arrayOf(number).isRequired,
+  postsPerHour: instanceOf(Array).isRequired,
   onClickHour: func.isRequired,
   selectedHour: number,
 };
