@@ -5,12 +5,13 @@ import {
 } from 'prop-types';
 import TableHeaderRow from './TableHeaderRow';
 import TableRow from './TableRow';
+import * as S from './PostsTable.style';
 
 export default function Table({
   title, author, numComments, score, date, url,
 }) {
   return (
-    <tr key={url}>
+    <S.Row key={url}>
       <TableHeaderRow title={title} url={url} />
       <TableRow
         date={date}
@@ -18,7 +19,7 @@ export default function Table({
         numComments={numComments}
         author={author}
       />
-    </tr>
+    </S.Row>
   );
 }
 
