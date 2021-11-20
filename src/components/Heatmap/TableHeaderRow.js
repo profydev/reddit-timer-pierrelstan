@@ -6,7 +6,7 @@ import * as S from './PostsTable.style';
 
 export default function TableHeaderRow({ title, url }) {
   return (
-    <S.Text>
+    <S.TitleColumn>
       <S.Link
         href={`${url}`}
         target="_blank"
@@ -14,7 +14,7 @@ export default function TableHeaderRow({ title, url }) {
       >
         {title}
       </S.Link>
-    </S.Text>
+    </S.TitleColumn>
   );
 }
 
