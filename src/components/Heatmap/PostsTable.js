@@ -5,29 +5,24 @@ import {
 import * as S from './PostsTable.style';
 import Table from './Table';
 
-const trimString = (string) => {
-  const length = 46;
-  const trimmedString = string.length > length
-    ? `${string.substring(0, length - 3)}...`
-    : string;
-
-  return trimmedString;
-};
+function getDisplayTime(createdAt) {
+  return new Date(createdAt)
+    .toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+    .toLowerCase();
+}
 export default function PostsTable({ posts }) {
-  const ConvertTheDate = (createdAt) => new Date(createdAt).toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, '$1$3');
-
   return (
     <S.Container>
-      <S.Heading>Posts</S.Heading>
+      <S.Headling>Posts</S.Headling>
       <S.Table>
         <thead>
-          <tr>
-            <th>Title</th>
-            <th>Time Posted</th>
-            <th>Score</th>
-            <th>Comments</th>
-            <th>Author</th>
-          </tr>
+          <S.Row>
+            <S.HeaderColumn>Title</S.HeaderColumn>
+            <S.HeaderColumn>Time Posted</S.HeaderColumn>
+            <S.HeaderColumn>Score</S.HeaderColumn>
+            <S.HeaderColumn>Comments</S.HeaderColumn>
+            <S.HeaderColumn>Author</S.HeaderColumn>
+          </S.Row>
         </thead>
         <tbody>
           {
@@ -35,11 +30,11 @@ export default function PostsTable({ posts }) {
             title, author, numComments, score, createdAt, url,
           }) => (
             <Table
-              title={trimString(title)}
+              title={title}
               author={author}
               numComments={numComments}
               score={score}
-              date={ConvertTheDate(createdAt)}
+              date={getDisplayTime(createdAt)}
               url={url}
             />
           ))
