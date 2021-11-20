@@ -13,16 +13,17 @@ import Home from './pages/home-page/Home';
 import Search from './pages/search-page/Search';
 import Terms from './pages/terms-page/Terms';
 import GlobalStyle from './utils/GlobalStyle';
+import * as S from './App.style';
 import theme from './utils/theme';
 
 function App() {
   return (
-    <div className="container">
+    <S.Container>
       <ThemeProvider theme={theme}>
         <Router>
           <Normalize />
           <GlobalStyle />
-          <div className="wrapper">
+          <S.Wrapper>
             <Header />
             <Switch>
               <Route path="/search/:subreddit">
@@ -38,11 +39,11 @@ function App() {
                 <NoMatch />
               </Route>
             </Switch>
-          </div>
+          </S.Wrapper>
           <Footer />
         </Router>
       </ThemeProvider>
-    </div>
+    </S.Container>
   );
 }
 export default App;
