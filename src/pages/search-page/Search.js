@@ -17,7 +17,8 @@ export default function Search() {
 
   const [selectedDayAndHour, setSelectedDayAndHour] = useState({ day: null, hour: null });
   const { day, hour } = selectedDayAndHour;
-  const selectedPosts = (postsPerDay[day] && postsPerDay[day][hour]) || [];
+  const selectedPosts = postsPerDay[day] && postsPerDay[day][hour];
+  const showPostsTable = selectedPosts && selectedPosts.length > 0;
 
   useEffect(() => {
     setValues(subreddit);
@@ -46,7 +47,7 @@ export default function Search() {
       />
 
       {
-        day && hour && <PostsTable posts={selectedPosts} />
+        showPostsTable && <PostsTable posts={selectedPosts} />
       }
     </>
   );
