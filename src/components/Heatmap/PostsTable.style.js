@@ -1,25 +1,32 @@
 import styled, { css } from 'styled-components';
 
-export const TableHead = styled.thead`
-padding: 10px`;
-
-export const Text = styled.td`
-text-overflow: ellipsis;
-overflow: hidden;
-white-space: nowrap;`;
-
 export const Table = styled.table`
 text-align: left;
 font-size: ${(props) => props.theme.font.size.small};
 color: ${(props) => props.theme.color.dark};
-border-collapse: collapse;`;
+border-collapse: collapse;
+
+th:nth-child(2) {
+  width:200px;
+  height:50px;
+  max-width:100px;
+  min-width:100px;
+  max-height:50px;
+  min-height:50px;
+}
+th:nth-child(5) {
+  width:200px;
+  height:50px;
+  max-width:100px;
+  min-width:100px;
+  max-height:50px;
+  min-height:50px;
+}
+`;
 
 export const Container = styled.div`
-width: 787px;
-margin: auto;
-display: flex;
-justify-content: center;
-flex-direction: column`;
+width: 786px;
+margin: 20px auto;`;
 
 export const Headling = styled.h2`
 margin-bottom: 4px;
