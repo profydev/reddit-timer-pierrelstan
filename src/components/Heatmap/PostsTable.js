@@ -2,8 +2,12 @@ import React from 'react';
 import {
   arrayOf,
 } from 'prop-types';
-import * as S from './PostsTable.style';
 import Table from './Table';
+import * as S from './PostsTable.style';
+
+function sortPosts(posts) {
+  return [...posts].sort((a, b) => a.createdAt.getMinutes() - b.createdAt.getMinutes());
+}
 
 function getDisplayTime(createdAt) {
   return new Date(createdAt)
@@ -26,7 +30,7 @@ export default function PostsTable({ posts }) {
         </thead>
         <tbody>
           {
-          posts.map(({
+          sortPosts(posts).map(({
             title, author, numComments, score, createdAt, url,
           }) => (
             <Table
