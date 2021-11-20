@@ -22,16 +22,16 @@ const HeatmapRow = memo(({
     <S.Weekday>{weekdays[day]}</S.Weekday>
 
     {
-        postsPerHour.map((numPosts, hour) => (
+        postsPerHour.map((posts, hour) => (
           <S.Hour
             // eslint-disable-next-line react/no-array-index-key
             key={hour}
-            numPosts={numPosts.length}
+            numPosts={posts.length}
             onClick={() => onClickHour({ day, hour })}
             selected={hour === selectedHour}
             type="button"
           >
-            {numPosts.length}
+            {posts.length}
           </S.Hour>
         ))
       }
