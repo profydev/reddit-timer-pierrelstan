@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const TableHead = styled.thead`
 padding: 10px`;
@@ -9,51 +9,10 @@ overflow: hidden;
 white-space: nowrap;`;
 
 export const Table = styled.table`
-   border-collapse: collapse;
-    caption-side: top;
-    border-collapse: collapse;
-    caption-side: bottom;
-
- tbody {
-      vertical-align: top;
-    }
-
-   td,
-    th {
-      border: 1px solid;
-      font-weight: normal;
-      font-size: 14px;
-      padding: 5px;
-
-    }
-    td,
-    tr {
-      padding: 4px;
-      margin:10px;
-    }
-   th: {
-    text-align: left;
-   }
-   td: {
-       margin:10px;
-   }
-   th:nth-child(1) {
-    text-align: left;
-    width: 360px;
-   }
-   th:nth-child(2) {
-    text-align: left;
-   }
-   th:nth-child(3) {
-    text-align: left;
-   }
-   th:nth-child(4) {
-    text-align: left;
-   }
-   th:nth-child(5) {
-    text-align: left;
-   }
-    `;
+text-align: left;
+font-size: ${(props) => props.theme.font.size.small};
+color: ${(props) => props.theme.color.dark};
+border-collapse: collapse;`;
 
 export const Container = styled.div`
 width: 787px;
@@ -62,7 +21,7 @@ display: flex;
 justify-content: center;
 flex-direction: column`;
 
-export const Heading = styled.h2`
+export const Headling = styled.h2`
 margin-bottom: 4px;
 ;`;
 
@@ -70,4 +29,38 @@ export const Link = styled.a`
   color: ${(props) => props.theme.color.blue};
   font-size: ${(props) => props.theme.font.size.default};
   text-decoration: none;
+`;
+
+export const Row = styled.tr``;
+
+export const HeaderColumn = styled.th`
+  border: 1px solid #dddddd;
+  padding: 0 12px 0 11px;
+  line-height: 34px;
+  font-weight: 500;
+`;
+
+export const Column = styled.td`
+  height: 34px;
+  padding: 0 12px;
+  border: 1px solid #dddddd;
+  line-height: 33px;
+`;
+
+const singleLineEllipsis = css`
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+`;
+
+export const TitleColumn = styled(Column)`
+  width: 373px;
+  max-width: 373px;
+  ${singleLineEllipsis}
+`;
+
+export const AuthorColumn = styled(Column)`
+  width: 129px;
+  max-width: 129px;
+  ${singleLineEllipsis}
 `;
