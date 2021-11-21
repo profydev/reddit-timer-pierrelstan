@@ -2,7 +2,7 @@ import React from 'react';
 import {
   arrayOf,
 } from 'prop-types';
-import Table from './Table';
+import TableColumn from './TableColumn';
 import * as S from './PostsTable.style';
 
 function sortPosts(posts) {
@@ -33,7 +33,7 @@ export default function PostsTable({ posts }) {
           sortPosts(posts).map(({
             title, author, numComments, score, createdAt, url,
           }) => (
-            <Table
+            <TableColumn
               title={title}
               author={author}
               numComments={numComments}
