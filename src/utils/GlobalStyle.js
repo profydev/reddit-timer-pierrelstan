@@ -60,14 +60,5 @@ const GlobalStyle = createGlobalStyle`
   h1 {
     font-size: ${(props) => props.theme.font.size.extraLarge};
   }
-
-  .container {
-     display : flex;
-     flex-direction: column;
-     min-height:100vh;
-  }
-  .wrapper  {
-    flex:1
-  }
   `;
 export default GlobalStyle;

@@ -15,9 +15,9 @@ const useFetchPosts = (subreddit) => {
     setStatus('pending');
     fetchPaginatedPosts(url, source)
     .then((posts) => groupPostsPerDayAndHour(posts))
-      .then((newpostsPerDay) => {
+      .then(({postsPerDay}) => {
         if(!unmounted){
-          setPostsPerDay(newpostsPerDay);
+          setPostsPerDay(postsPerDay);
           setStatus('resolved');
         }
       })

@@ -4,7 +4,7 @@ import useFetchPosts from '../Hooks/useFetchPosts';
 
 const getNumPosts = (nestedPostsArray) => nestedPostsArray.reduce(
   (numTotal, postsPerDay) => postsPerDay.reduce(
-    (numPerDay, postsPerHour) => numPerDay + postsPerHour, numTotal,
+    (numPerDay, posts) => numPerDay + posts.length, numTotal,
   ),
   0,
 );

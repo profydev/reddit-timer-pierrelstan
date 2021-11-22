@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-  arrayOf,
   func,
   number,
   shape,
+  instanceOf,
 } from 'prop-types';
 import HeatmapHeaderRow from './HeatmapHeaderRow';
 import HeatmapRow from './HeatmapRow';
@@ -35,7 +35,7 @@ function Heatmap({ postsPerDay, onClickHour, selectedDayAndHour }) {
 }
 
 Heatmap.propTypes = {
-  postsPerDay: arrayOf(arrayOf(number)).isRequired,
+  postsPerDay: instanceOf(Array).isRequired,
   onClickHour: func.isRequired,
   selectedDayAndHour: shape({
     day: number,

@@ -9,7 +9,7 @@ const MAX_NUM_POSTS_PER_PAGE = 100;
  * function. Until the last page or the required number of posts has been reached we continue
  * to fetch more posts.
  *
- * @param {string} subreddit the name of the subreddit
+ * @param {string} url the link of the subreddit
  * @param {array} previousPosts the posts that have already been loaded
  *    (only to be used in recursive calls)
  * @param {string} after the id of the last post used for pagination
@@ -29,7 +29,8 @@ async function fetchPaginatedPosts(url, source, previousPosts = [], after = null
 }
 
 /**
- * Builds an object containing posts per day of week and hour to create the heatmap.
+ * Builds an object containing posts per day of week and hour and title, ,date ,
+ * author, url, score, numComments to create the heatmap.
  * Each entry obj[dayOfWeek][hour] contains an array of posts.
  * dayOfWeek is a number between 0 and 6, hour a number between 0 and 23.
  *
@@ -39,17 +40,24 @@ async function fetchPaginatedPosts(url, source, previousPosts = [], after = null
 function groupPostsPerDayAndHour(posts) {
   const postsPerDay = Array(7)
     .fill()
-    .map(() => Array(24).fill().map(() => 0));
+    .map(() => Array(24).fill().map(() => []));
 
   posts.forEach((post) => {
     const createdAt = new Date(post.data.created_utc * 1000);
     const dayOfWeek = createdAt.getDay();
     const hour = createdAt.getHours();
 
-    postsPerDay[dayOfWeek][hour] += 1;
+    postsPerDay[dayOfWeek][hour].push({
+      title: post.data.title,
+      author: post.data.author,
+      createdAt,
+      url: `https://reddit.com${post.data.permalink}`,
+      score: post.data.score,
+      numComments: post.data.num_comments,
+    });
   });
 
-  return postsPerDay;
+  return { postsPerDay };
 }
 
 export { fetchPaginatedPosts, groupPostsPerDayAndHour };

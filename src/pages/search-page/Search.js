@@ -3,6 +3,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import useFetchPosts from '../../Hooks/useFetchPosts';
 import HeatmapSection from '../../components/Heatmap/HeatmapSection';
 import FormSection from '../../components/SubredditForm/FormSection';
+import PostsTable from '../../components/Heatmap/PostsTable';
 
 export default function Search() {
   const history = useHistory();
@@ -15,6 +16,9 @@ export default function Search() {
   } = useFetchPosts(subreddit);
 
   const [selectedDayAndHour, setSelectedDayAndHour] = useState({ day: null, hour: null });
+  const { day, hour } = selectedDayAndHour;
+  const selectedPosts = postsPerDay[day] && postsPerDay[day][hour];
+  const showPostsTable = selectedPosts && selectedPosts.length > 0;
 
   useEffect(() => {
     setValues(subreddit);
@@ -29,6 +33,7 @@ export default function Search() {
     const SubredditUrl = await `/search/${values}`;
     history.push(SubredditUrl);
   };
+
   return (
     <>
       <FormSection OnSubmit={OnSubmit} OnChange={OnChange} values={values} />
@@ -40,6 +45,10 @@ export default function Search() {
         setSelectedDayAndHour={setSelectedDayAndHour}
         onClickHour={setSelectedDayAndHour}
       />
+
+      {
+        showPostsTable && <PostsTable posts={selectedPosts} />
+      }
     </>
   );
 }
