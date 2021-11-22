@@ -60,3 +60,79 @@ describe('Testing Search Page', () => {
     expect(cellToClick).toHaveStyle('border: 1px solid #1e2537');
   });
 });
+
+// Posts Table
+async function clickFirstCellWithValue(value) {
+  const heatmap = await screen.findByTestId('heatmap');
+  const cell = within(heatmap).getAllByText(value)[0];
+  userEvent.click(cell);
+}
+
+describe('posts table', () => {
+  test('is not visible when no cell is clicked', async () => {
+    const route = '/search/reactjs';
+
+    setup(<App />, { route });
+    await screen.queryByTestId('heatmap');
+
+    expect(screen.queryByRole('table')).not.toBeInTheDocument();
+  });
+
+  test('is not visible when cell with no posts is clicked', async () => {
+    const route = '/search/reactjs';
+
+    setup(<App />, { route });
+    await clickFirstCellWithValue('0');
+
+    expect(screen.queryByRole('table')).not.toBeInTheDocument();
+  });
+
+  test('shows posts ordered by time according to cell that is clicked', async () => {
+    const route = '/search/reactjs';
+
+    setup(<App />, { route });
+    await clickFirstCellWithValue('4');
+
+    const table = screen.getByRole('table');
+    const tableRows = within(table)
+      .getAllByRole('row')
+      .slice(1);
+
+    const tableContent = tableRows.map((row) => {
+      const cells = within(row).getAllByRole('cell');
+      const titleLink = within(cells[0]).getByRole('link');
+      const authorLink = within(cells[4]).getByRole('link');
+      return {
+        title: titleLink.innerHTML,
+        href: titleLink.href,
+        time: cells[1].innerHTML,
+        score: cells[2].innerHTML,
+        numComments: cells[3].innerHTML,
+        author: authorLink.innerHTML,
+        authorHref: authorLink.href,
+      };
+    });
+
+    expect(tableContent).toMatchSnapshot();
+  });
+
+  test('shows no link for deleted user', async () => {
+    const route = '/search/reactjs';
+
+    setup(<App />, { route });
+
+    const heatmap = await screen.findByTestId('heatmap');
+
+    const sunday5pm = within(heatmap).getAllByText('7')[0];
+
+    userEvent.click(sunday5pm);
+    const table = screen.getByRole('table');
+
+    const rowWithDeletedUser = within(table).getAllByRole('row')[2];
+
+    const authorCell = within(rowWithDeletedUser).getAllByRole('cell')[4];
+
+    expect(within(authorCell).queryByRole('link')).not.toBeInTheDocument();
+    expect(authorCell.innerHTML).toBe('[deleted]');
+  });
+});
