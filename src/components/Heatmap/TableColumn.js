@@ -11,7 +11,6 @@ export default function TableColumn({
 }) {
   return (
     <S.Row key={url}>
-      {/* <TableTitleRow title={title} url={url} /> */}
       <TableRow
         title={title}
         url={url}
