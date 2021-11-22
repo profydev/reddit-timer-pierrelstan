@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  arrayOf,
+  instanceOf,
 } from 'prop-types';
 import TableColumn from './TableColumn';
 import * as S from './PostsTable.style';
@@ -50,5 +50,5 @@ export default function PostsTable({ posts }) {
 }
 
 PostsTable.propTypes = {
-  posts: arrayOf({}).isRequired,
+  posts: instanceOf(Array).isRequired,
 };
