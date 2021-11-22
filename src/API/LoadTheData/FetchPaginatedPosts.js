@@ -9,7 +9,7 @@ const MAX_NUM_POSTS_PER_PAGE = 100;
  * function. Until the last page or the required number of posts has been reached we continue
  * to fetch more posts.
  *
- * @param {string} subreddit the name of the subreddit
+ * @param {string} url the link of the subreddit
  * @param {array} previousPosts the posts that have already been loaded
  *    (only to be used in recursive calls)
  * @param {string} after the id of the last post used for pagination
