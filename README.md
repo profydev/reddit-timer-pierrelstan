@@ -1,19 +1,32 @@
 # Welcome to Reddit Timer App 👋🏾
 
-## The following are the different stages of the app:
+## The following are the screenshots of the different stages of the app.
 
 ![alt text](https://res.cloudinary.com/stanley/image/upload/v1637689677/homepage_nob8zl.svg)
-
+\
+&nbsp;
+\
+&nbsp;
 ![alt text](https://res.cloudinary.com/stanley/image/upload/v1637689626/search_page-loading_1_izcnte.png)
+\
+&nbsp;
+\
+&nbsp;
 
 ![alt text](https://res.cloudinary.com/stanley/image/upload/v1637750429/search_page-results_1_pxg5l0.png)
 
-
+\
+&nbsp;
+\
+&nbsp;
 ## Description:
 ***
 Reddit Timer it's a Web app for professional content creators. To help them know when they should share their content so they can reach more people.
 
-$~$
+\
+&nbsp;
+\
+&nbsp;
 
 ## Tech Stack:
 ***
@@ -22,7 +35,10 @@ $~$
 3. [Styled-components](https://styled-components.com/) for styling
 4. [React Testing Library](https://testing-library.com/docs/). for writing automated tests.
 
-$~$
+\
+&nbsp;
+\
+&nbsp;
 
 ### Tools Use for the Project
 ***
@@ -32,13 +48,19 @@ $~$
 - [Github](https://github.com) - Version control & team collaboration
 - [Slack](https://slack.com) - Team communication tool
 
-$~$
+\
+&nbsp;
+\
+&nbsp;
 
 ## The skills that I learned while building the project:
   ***
 
 
-$~$
+\
+&nbsp;
+\
+&nbsp;
 
 
 - Creating [pixel-perfect](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=en-US) designs
@@ -49,7 +71,10 @@ $~$
 - Code reviews
 - Continuous integration
 
-$~$
+\
+&nbsp;
+\
+&nbsp;
 
 ## Technical decisions:
 ***
@@ -66,16 +91,26 @@ The file contains three functions:
 
 - The custom hook called useFetchPosts which triggers the data fetching, stores the result in a state variable, and keeps track of the loading state.
 
+\
+&nbsp;
+\
+&nbsp;
 
-$~$
+
 ## About This Project
  This course mimics a professional real-world development environment,
 designs were provided via Figma. The project was split into small tasks using ClickUp as a project management tool. I created a pull request for every task. The code was reviewed line by line by mentor Tara a bot  and Johannes a senior developer.
 
-$~$
+\
+&nbsp;
+\
+&nbsp;
 I was free to choose any technical stack, packages, and coding styles to finish the project as long as I met the acceptance criteria of a given task. The only limitation was to use React.
 
-$~$
+\
+&nbsp;
+\
+&nbsp;
 
 
  ## Complicate business logic:
@@ -83,18 +118,29 @@ $~$
  - FetchPaginatedPosts.js
 
 ![business logic](https://res.cloudinary.com/stanley/image/upload/v1637968378/bussiness_logic_dbumr0.png)
-$~$
+\
+&nbsp;
+\
+&nbsp;
 
 ##  interesting CSS:
 
 - HeatmapRow.style.js
 ![css](https://res.cloudinary.com/stanley/image/upload/v1637969665/interestingCss_sworgi.png)
-$~$
+
+\
+&nbsp;
+\
+&nbsp;
 
 ## test:
-- useFetchPosts.test
+- search-page-test
 ![test](https://res.cloudinary.com/stanley/image/upload/v1637972023/useFetchPosts.test_s14ekw.png)
-$~$
+
+\
+&nbsp;
+\
+&nbsp;
 
 
 ## Installation:
@@ -107,7 +153,10 @@ OS / Linux / Windows
  After all the packages has been successfully installed, you can run:
  `yarn start`
 
-$~$
+\
+&nbsp;
+\
+&nbsp;
  ## Run tests:
 
 `yarn  test `
@@ -115,7 +164,10 @@ $~$
 or
 
 `yarn cypress:open`
-$~$
+\
+&nbsp;
+\
+&nbsp;
 
 ## Author
 👤 Stanley Pierre Louis
