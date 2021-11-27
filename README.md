@@ -20,7 +20,7 @@
 \
 &nbsp;
 ## Description:
-***
+
 Reddit Timer it's a Web app for professional content creators. To help them know when they should share their content so they can reach more people.
 
 \
@@ -29,7 +29,7 @@ Reddit Timer it's a Web app for professional content creators. To help them know
 &nbsp;
 
 ## Tech Stack:
-***
+
 1.  [React/React Hooks](https://reactrouter.com/)
 2. [ React-Router](https://reactrouter.com/)  for navigation
 3. [Styled-components](https://styled-components.com/) for styling
@@ -41,7 +41,7 @@ Reddit Timer it's a Web app for professional content creators. To help them know
 &nbsp;
 
 ### Tools Use for the Project
-***
+
 -  [Figma](https://figma.com/) - Where the design from
 - [Perfect Pixel](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=en-US) - To Help create Pixel perfect Layout
 - [ClickUp](https://clickup.com) - Project Management Tool
@@ -54,13 +54,6 @@ Reddit Timer it's a Web app for professional content creators. To help them know
 &nbsp;
 
 ## The skills that I learned while building the project:
-  ***
-
-
-\
-&nbsp;
-\
-&nbsp;
 
 
 - Creating [pixel-perfect](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=en-US) designs
@@ -77,11 +70,11 @@ Reddit Timer it's a Web app for professional content creators. To help them know
 &nbsp;
 
 ## Technical decisions:
-***
+
 
 The reason why I choose not to manage the state of the app with redux is because the application perform simple actions.
 
-I created  a custom hook instead  to encapsulate hook-related logic that can be re-used in the future.
+I created  a custom hook instead  to encapsulate hook-related logic that can be reused in the future.
 
 The file contains three functions:
 
@@ -97,14 +90,10 @@ The file contains three functions:
 &nbsp;
 
 
-## About This Project
+## About this Project
  This course mimics a professional real-world development environment,
-designs were provided via Figma. The project was split into small tasks using ClickUp as a project management tool. I created a pull request for every task. The code was reviewed line by line by mentor Tara a bot  and Johannes a senior developer.
+designs were provided via Figma. The project was split into small tasks using ClickUp as a project management tool. I created a pull request for every tasks. The code was reviewed line by line by mentor Tara a bot  and [Johannes](https://jkettmann.com/) a senior developer.
 
-\
-&nbsp;
-\
-&nbsp;
 I was free to choose any technical stack, packages, and coding styles to finish the project as long as I met the acceptance criteria of a given task. The only limitation was to use React.
 
 \
@@ -114,7 +103,7 @@ I was free to choose any technical stack, packages, and coding styles to finish 
 
 
  ## Complicate business logic:
- ***
+
  - FetchPaginatedPosts.js
 
 ![business logic](https://res.cloudinary.com/stanley/image/upload/v1637968378/bussiness_logic_dbumr0.png)
@@ -141,22 +130,24 @@ I was free to choose any technical stack, packages, and coding styles to finish 
 &nbsp;
 \
 &nbsp;
-
-
 ## Installation:
 
 OS / Linux / Windows
 
 `yarn install `
 
+\
+&nbsp;
+\
+&nbsp;
 ## Usage:
  After all the packages has been successfully installed, you can run:
+
  `yarn start`
 
 \
 &nbsp;
-\
-&nbsp;
+
  ## Run tests:
 
 `yarn  test `
