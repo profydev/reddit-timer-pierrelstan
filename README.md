@@ -125,7 +125,7 @@ I was free to choose any technical stack, packages, and coding styles to finish 
 \
 &nbsp;
 ##  If I  had more time
-- These are the changes I could make to the app:
+- This is the changes I would implement to the app:
 
   1. Highlights for cells containing posts with deleted author
   2. Make the app responsive on all devices
