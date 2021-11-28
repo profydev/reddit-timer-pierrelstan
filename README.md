@@ -70,19 +70,16 @@ Reddit Timer it's a Web app for professional content creators. To help them know
 &nbsp;
 
 ## Technical decisions:
+The app performs simple actions, I Choose not to use Redux as state management because of that.
 
-
-The reason why I choose not to manage the state of the app with redux is because the application perform simple actions.
-
-I created  a custom hook instead  to encapsulate hook-related logic that can be reused in the future.
+I created a custom hook to encapsulate hook-related logic that may be useful in the future if needed.
 
 The file contains three functions:
+- A recursive function called fetchPaginatedPosts handles sending five requests to the Reddit API.
 
-- A recursive function called fetchPaginatedPosts which is responsible for sending 5 subsequent requests to the Reddit API.
+- A function called groupPostsPerDayAndHour nested 2D array that contains the number of posts grouped by weekday and hour
 
-- A function  groupPostsPerDayAndHour that  nested 2D array that contains the number of posts grouped by week day and hour
-
-- The custom hook called useFetchPosts which triggers the data fetching, stores the result in a state variable, and keeps track of the loading state.
+- A custom hook called useFetchPosts triggers data fetching stores the result in a state variable that keeps track of the loading state.
 
 \
 &nbsp;
@@ -91,8 +88,7 @@ The file contains three functions:
 
 
 ## About this Project
- This course mimics a professional real-world development environment,
-designs were provided via Figma. The project was split into small tasks using ClickUp as a project management tool. I created a pull request for every tasks. The code was reviewed line by line by mentor Tara a bot  and [Johannes](https://jkettmann.com/) a senior developer.
+This course mimics professional real-world development environment designs via Figma. The project's split into small tasks using ClickUp as a project management tool. I created a pull request for every piece of work. [Johannes](https://jkettmann.com/) (a senior developer) and mentor Tara (a bot) reviewed the code line by line.
 
 I was free to choose any technical stack, packages, and coding styles to finish the project as long as I met the acceptance criteria of a given task. The only limitation was to use React.
 
@@ -104,7 +100,7 @@ I was free to choose any technical stack, packages, and coding styles to finish 
 
  ## Complicate business logic:
 
- - FetchPaginatedPosts.js
+ - [FetchPaginatedPosts.js](/src/API/LoadTheData/FetchPaginatedPosts.js)
 
 ![business logic](https://res.cloudinary.com/stanley/image/upload/v1637968378/bussiness_logic_dbumr0.png)
 \
@@ -114,7 +110,7 @@ I was free to choose any technical stack, packages, and coding styles to finish 
 
 ##  interesting CSS:
 
-- HeatmapRow.style.js
+- [HeatmapRow.style.js](/src/components/Heatmap/HeatmapRow.style.js)
 ![css](https://res.cloudinary.com/stanley/image/upload/v1637969665/interestingCss_sworgi.png)
 
 \
@@ -123,8 +119,17 @@ I was free to choose any technical stack, packages, and coding styles to finish 
 &nbsp;
 
 ## test:
-- search-page-test
-![test](https://res.cloudinary.com/stanley/image/upload/v1637972023/useFetchPosts.test_s14ekw.png)
+- [Search-page.test](/src/__tests__/search-page.test.js)
+![test](https://res.cloudinary.com/stanley/image/upload/v1638057475/searrch-page.test2_w54nqh.png)
+
+\
+&nbsp;
+##  If I  had more time
+- These are the changes I could make to the app:
+
+  1. Highlights for cells containing posts with deleted author
+  2. Make the app responsive on all devices
+
 
 \
 &nbsp;
