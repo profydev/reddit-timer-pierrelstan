@@ -40,7 +40,7 @@ Reddit Timer it's a Web app for professional content creators. To help them know
 \
 &nbsp;
 
-### Tools Use for the Project
+### Tools Used for the Project
 
 -  [Figma](https://figma.com/) - Where the design from
 - [Perfect Pixel](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=en-US) - To Help create Pixel perfect Layout
@@ -70,7 +70,7 @@ Reddit Timer it's a Web app for professional content creators. To help them know
 &nbsp;
 
 ## Technical decisions:
-The app performs simple actions, I Choose not to use Redux as state management because of that.
+The app performs simple actions, I chose not to use Redux as state management because of that.
 
 I created a custom hook to encapsulate hook-related logic that may be useful in the future if needed.
 
