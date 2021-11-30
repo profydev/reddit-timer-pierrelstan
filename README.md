@@ -23,6 +23,11 @@
 
 Reddit Timer it's a Web app for professional content creators. To help them know when they should share their content so they can reach more people.
 
+This project mimics professional real-world development environment designs via Figma. The project's split into small tasks using ClickUp as a project management tool. I created a pull request for every piece of work. [Johannes](https://jkettmann.com/) (a senior developer) and mentor Tara (a bot) reviewed the code line by line.
+
+I was free to choose any technical stack, packages, and coding styles to finish the project as long as I met the acceptance criteria of a given task. The only limitation was to use React.
+
+
 \
 &nbsp;
 \
@@ -86,11 +91,6 @@ The file contains three functions:
 \
 &nbsp;
 
-
-## About this Project
-This course mimics professional real-world development environment designs via Figma. The project's split into small tasks using ClickUp as a project management tool. I created a pull request for every piece of work. [Johannes](https://jkettmann.com/) (a senior developer) and mentor Tara (a bot) reviewed the code line by line.
-
-I was free to choose any technical stack, packages, and coding styles to finish the project as long as I met the acceptance criteria of a given task. The only limitation was to use React.
 
 \
 &nbsp;
