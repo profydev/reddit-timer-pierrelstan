@@ -21,7 +21,7 @@
 &nbsp;
 ## Description:
 
-Reddit Timer it's a Web app for professional content creators. To help them know when they should share their content so they can reach more people.
+Reddit Timer it's a Web app for professional content creators. To help them know when they should share their content so that they can reach more people.
 
 This project mimics professional real-world development environment designs via Figma. The project's split into small tasks using ClickUp as a project management tool. I created a pull request for every piece of work. [Johannes](https://jkettmann.com/) (a senior developer) and mentor Tara (a bot) reviewed the code line by line.
 
