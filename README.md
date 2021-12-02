@@ -1,68 +1,173 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Welcome to Reddit Timer App 👋🏾
 
-## Available Scripts
+## The following are the screenshots of the different stages of the app.
 
-In the project directory, you can run:
+![alt text](https://res.cloudinary.com/stanley/image/upload/v1637689677/homepage_nob8zl.svg)
+\
+&nbsp;
+\
+&nbsp;
+![alt text](https://res.cloudinary.com/stanley/image/upload/v1637689626/search_page-loading_1_izcnte.png)
+\
+&nbsp;
+\
+&nbsp;
 
-### `yarn start`
+![alt text](https://res.cloudinary.com/stanley/image/upload/v1637750429/search_page-results_1_pxg5l0.png)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+\
+&nbsp;
+\
+&nbsp;
+## Description:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Reddit Timer it's a Web app for professional content creators. To help them know when they should share their content so that they can reach more people.
 
-### `yarn test`
+This project mimics professional real-world development environment designs via Figma. The project's split into small tasks using ClickUp as a project management tool. I created a pull request for every piece of work. [Johannes](https://jkettmann.com/) (a senior developer) and mentor Tara (a bot) reviewed the code line by line.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+I was free to choose any technical stack, packages, and coding styles to finish the project as long as I met the acceptance criteria of a given task. The only limitation was to use React.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+\
+&nbsp;
+\
+&nbsp;
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Tech Stack:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1.  [React/React Hooks](https://reactrouter.com/)
+2. [ React-Router](https://reactrouter.com/)  for navigation
+3. [Styled-components](https://styled-components.com/) for styling
+4. [React Testing Library](https://testing-library.com/docs/). for writing automated tests.
 
-### `yarn eject`
+\
+&nbsp;
+\
+&nbsp;
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Tools Used for the Project
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-  [Figma](https://figma.com/) - Where the design from
+- [Perfect Pixel](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=en-US) - To Help create Pixel perfect Layout
+- [ClickUp](https://clickup.com) - Project Management Tool
+- [Github](https://github.com) - Version control & team collaboration
+- [Slack](https://slack.com) - Team communication tool
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+\
+&nbsp;
+\
+&nbsp;
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## The skills that I learned while building the project:
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Creating [pixel-perfect](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=en-US) designs
+- Planning and implementing a complex UI component
+- Implement data fetching with error handling
+- Writing integration tests
+- Professional Git workflow with pull requests
+- Code reviews
+- Continuous integration
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+\
+&nbsp;
+\
+&nbsp;
 
-### Code Splitting
+## Technical decisions:
+The app performs simple actions, I chose not to use Redux as state management because of that.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+I created a custom hook to encapsulate hook-related logic that may be useful in the future if needed.
 
-### Analyzing the Bundle Size
+The file contains three functions:
+- A recursive function called fetchPaginatedPosts handles sending five requests to the Reddit API.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- A function called groupPostsPerDayAndHour nested 2D array that contains the number of posts grouped by weekday and hour
 
-### Making a Progressive Web App
+- A custom hook called useFetchPosts triggers data fetching stores the result in a state variable that keeps track of the loading state.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+\
+&nbsp;
+\
+&nbsp;
 
-### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+\
+&nbsp;
+\
+&nbsp;
 
-### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+ ## Business logic:
 
-### `yarn build` fails to minify
+ - [FetchPaginatedPosts.js](/src/API/LoadTheData/FetchPaginatedPosts.js)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+![business logic](https://res.cloudinary.com/stanley/image/upload/v1637968378/bussiness_logic_dbumr0.png)
+\
+&nbsp;
+\
+&nbsp;
+
+##  Interesting CSS (HeatmapRow):
+
+- [HeatmapRow.style.js](/src/components/Heatmap/HeatmapRow.style.js)
+![css](https://res.cloudinary.com/stanley/image/upload/v1637969665/interestingCss_sworgi.png)
+
+\
+&nbsp;
+\
+&nbsp;
+
+## Test cases:
+- [Search-page.test](/src/__tests__/search-page.test.js)
+![test](https://res.cloudinary.com/stanley/image/upload/v1638057475/searrch-page.test2_w54nqh.png)
+
+\
+&nbsp;
+##  If I  had more time
+- This is the changes I would implement to the app:
+
+  1. Highlights for cells containing posts with deleted author
+  2. Make the app responsive on all devices
+
+
+\
+&nbsp;
+\
+&nbsp;
+## Installation:
+
+OS / Linux / Windows
+
+`yarn install `
+
+\
+&nbsp;
+\
+&nbsp;
+## Usage:
+ After all the packages has been successfully installed, you can run:
+
+ `yarn start`
+
+\
+&nbsp;
+
+ ## Run tests:
+
+`yarn  test `
+
+or
+
+`yarn cypress:open`
+\
+&nbsp;
+\
+&nbsp;
+
+## Author
+👤 Stanley Pierre Louis
+
+- Twitter: [@pierrelstan](https://twitter.com/pierrelStan)
+- LinkedIn: [@pierrelstan](https://linkedin.com/in/pierre-louis-stanley-930110133)
+
