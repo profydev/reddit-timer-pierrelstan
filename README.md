@@ -108,7 +108,7 @@ The file contains three functions:
 \
 &nbsp;
 
-##  interesting CSS:
+##  Interesting CSS (HeatmapRow):
 
 - [HeatmapRow.style.js](/src/components/Heatmap/HeatmapRow.style.js)
 ![css](https://res.cloudinary.com/stanley/image/upload/v1637969665/interestingCss_sworgi.png)
@@ -118,7 +118,7 @@ The file contains three functions:
 \
 &nbsp;
 
-## test:
+## Test cases:
 - [Search-page.test](/src/__tests__/search-page.test.js)
 ![test](https://res.cloudinary.com/stanley/image/upload/v1638057475/searrch-page.test2_w54nqh.png)
 
