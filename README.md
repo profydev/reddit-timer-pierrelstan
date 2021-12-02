@@ -98,7 +98,7 @@ The file contains three functions:
 &nbsp;
 
 
- ## Complicate business logic:
+ ## Complicated business logic:
 
  - [FetchPaginatedPosts.js](/src/API/LoadTheData/FetchPaginatedPosts.js)
 
