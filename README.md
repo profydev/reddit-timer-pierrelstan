@@ -21,11 +21,11 @@
 &nbsp;
 ## Description:
 
-Reddit Timer it's a Web app for professional content creators. To help them know when they should share their content so that they can reach more people.
+Reddit Timer is a Web app for professional content creators. To help them know when they should share their content and to reach more people.
 
-This project mimics professional real-world development environment designs via Figma. The project's split into small tasks using ClickUp as a project management tool. I created a pull request for every piece of work. [Johannes](https://jkettmann.com/) (a senior developer) and mentor Tara (a bot) reviewed the code line by line.
+This project mimics professional real-world development environment designs via Figma. The project is split into small tasks using ClickUp as a project management tool. I created a pull request for every piece of work. [Johannes](https://jkettmann.com/) (a senior developer) and mentor Tara (a bot) reviewed the code line by line.
 
-I was free to choose any technical stack, packages, and coding styles to finish the project as long as I met the acceptance criteria of a given task. The only limitation was to use React.
+I was free to choose any technical stack, packages, and coding styles to finish the project as long as I met the acceptance criteria of a given task. The only limitation was to use Reactjs.
 
 
 \
@@ -84,7 +84,7 @@ The file contains three functions:
 
 - A function called groupPostsPerDayAndHour nested 2D array that contains the number of posts grouped by weekday and hour
 
-- A custom hook called useFetchPosts triggers data fetching stores the result in a state variable that keeps track of the loading state.
+- A custom hook called useFetchPosts triggers data fetching and stores the result in a state variable that keeps track of the loading state.
 
 \
 &nbsp;
@@ -125,7 +125,7 @@ The file contains three functions:
 \
 &nbsp;
 ##  If I  had more time
-- This is the changes I would implement to the app:
+- There are the changes I would implement to the app:
 
   1. Highlights for cells containing posts with deleted author
   2. Make the app responsive on all devices
@@ -146,7 +146,7 @@ OS / Linux / Windows
 \
 &nbsp;
 ## Usage:
- After all the packages has been successfully installed, you can run:
+ After all the packages have been successfully installed, you can run:
 
  `yarn start`
 
@@ -159,7 +159,7 @@ OS / Linux / Windows
 
 or
 
-`yarn cypress:open`
+`yarn cypress: open`
 \
 &nbsp;
 \
